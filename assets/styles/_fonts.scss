@@ -1,0 +1,55 @@
+.Heading1 {
+  @include font-base($font-weight-heavy, 48px, 48px, 0x);
+}
+
+.Heading2 {
+  @include font-base($font-weight-bold, 26px, 36px, 0);
+}
+
+.Heading3 {
+  @include font-base($font-weight-bold, 20px, 20px, 0);
+}
+
+.Heading4 {
+  @include font-base($font-weight-medium, 18px, 28px, 0);
+}
+
+.Heading5 {
+  @include font-base($font-weight-medium, 16px, 24px, 0);
+}
+
+.Heading6 {
+  @include font-base($font-weight-medium, 16px, 24px, 0);
+}
+
+.Body {
+  @include font-base($font-weight-normal, 14px, 20px, 0.21px);
+}
+
+.Body-Emphasis {
+  @include font-base($font-weight-normal, 14px, 20px, 0.35px);
+}
+
+.Caption {
+  @include font-base($font-weight-normal, 12px, 18px, 0.18px);
+}
+
+.Caption-Emphasis {
+  @include font-base($font-weight-normal, 12px, 18px, 0.3px);
+}
+
+.Hint {
+  @include font-base($font-weight-normal, 10px, 16px, 0.15px);
+}
+
+.Hint-Emphasis {
+  @include font-base($font-weight-normal, 10px, 16px, 0.25px);
+}
+
+.Label {
+  @include font-base($font-weight-normal, 10px, 16px, 0.25px);
+}
+
+.Text-Button {
+  @include font-base($font-weight-medium, 14px, 16px, 0.35px);
+}
