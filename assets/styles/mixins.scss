@@ -1,0 +1,9 @@
+@mixin font-base($weight, $size, $height, $spacing) {
+  opacity: 1;
+  font-family: $base-font-family;
+  font-size: $size;
+  font-weight: $weight;
+  text-align: left;
+  line-height: $height;
+  letter-spacing: $spacing;
+}
