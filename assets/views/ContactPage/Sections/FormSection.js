@@ -1,16 +1,19 @@
 import React from "react";
-import axios from "axios";
 import { makeStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
-import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import Grid from "@material-ui/core/Grid";
 import InputAdornment from "@material-ui/core/InputAdornment";
+import Snackbar from "@material-ui/core/Snackbar";
+import TextField from "@material-ui/core/TextField";
+import Alert from "@material-ui/lab/Alert";
 import AccountCircle from "@material-ui/icons/AccountCircle";
+import ClearIcon from "@material-ui/icons/Clear";
 import EmailIcon from "@material-ui/icons/Email";
 import PhoneIcon from "@material-ui/icons/Phone";
 import SendIcon from "@material-ui/icons/Send";
-import ClearIcon from "@material-ui/icons/Clear";
 import SubjectIcon from "@material-ui/icons/Subject";
+import { postContact } from "api/contactApi";
+import { formData, formErrors, formAlert } from "constants/contactConstants";
 import validateContactForm from "utils/validateContactForm";
 
 const useStyles = makeStyles((theme) => ({
@@ -30,26 +33,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const formData = {
-  name: "",
-  subject: "",
-  email: "",
-  phone: "",
-  message: "",
-};
-
-const formErrors = {
-  name: { error: false, text: "" },
-  subject: { error: false, text: "" },
-  email: { error: false, text: "" },
-  phone: { error: false, text: "" },
-  message: { error: false, text: "" },
-};
-
 const FormSection = () => {
   const classes = useStyles();
   const [payload, setPayload] = React.useState(formData);
   const [errors, setErrors] = React.useState(formErrors);
+  const [alert, setAlert] = React.useState(formAlert);
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -60,15 +48,28 @@ const FormSection = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (Object.keys(errors).some((k) => errors[k].error)) {
-      console.log("form contains errors");
+      setAlert({
+        open: true,
+        severity: "warning",
+        message: "Form contains errors",
+      });
     } else {
-      axios
-        .post("/api/contact", payload)
-        .then((response) => {
-          console.log(response);
+      postContact(payload)
+        .then(() => {
+          setAlert({
+            open: true,
+            severity: "success",
+            message: "Email sent successfully",
+          });
+          setPayload(formData);
+          setErrors(formErrors);
         })
-        .catch((error) => {
-          console.log(error);
+        .catch(() => {
+          setAlert({
+            open: true,
+            severity: "error",
+            message: "Error sending Email",
+          });
         });
     }
   };
@@ -79,9 +80,23 @@ const FormSection = () => {
     setErrors(formErrors);
   };
 
+  const handleClose = () => {
+    setAlert({ ...alert, open: false });
+  };
+
   return (
     <form autoComplete="on" method="post" onSubmit={handleSubmit}>
       <div className={classes.root}>
+        <Snackbar
+          anchorOrigin={{ vertical: "top", horizontal: "right" }}
+          open={alert.open}
+          onClose={handleClose}
+          autoHideDuration={5000}
+        >
+          <Alert onClose={handleClose} severity={alert.severity}>
+            {alert.message}
+          </Alert>
+        </Snackbar>
         <Grid container spacing={3}>
           <Grid item xs={12}>
             <TextField

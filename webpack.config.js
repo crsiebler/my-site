@@ -24,10 +24,12 @@ Encore.setOutputPath("public/build/")
     config.corejs = 3;
   })
   .addAliases({
+    api: path.resolve(__dirname, "./assets/api"),
     components: path.resolve(__dirname, "./assets/components"),
-    views: path.resolve(__dirname, "./assets/views"),
+    constants: path.resolve(__dirname, "./assets/constants"),
     styles: path.resolve(__dirname, "./assets/styles"),
     utils: path.resolve(__dirname, "./assets/utils/"),
+    views: path.resolve(__dirname, "./assets/views"),
   })
   .enableSassLoader()
   .enableReactPreset();

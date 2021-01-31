@@ -25,7 +25,6 @@ const PageLayout = (props) => {
   const [drawerOpen, setDrawerOpen] = React.useState(false);
 
   const toggleDrawer = () => {
-    console.log("toggle drawer");
     setDrawerOpen(!drawerOpen);
   };
 
