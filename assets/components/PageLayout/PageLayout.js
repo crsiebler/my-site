@@ -8,7 +8,7 @@ import StickyFooter from "components/StickyFooter/StickyFooter";
 import Header from "./Sections/HeaderSection";
 import NavagationSection from "./Sections/NavagationSection";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     display: "flex",
     flexDirection: "column",

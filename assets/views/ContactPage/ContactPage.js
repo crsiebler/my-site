@@ -1,6 +1,7 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
 import PageLayout from "components/PageLayout/PageLayout";
+import FormSection from "./Sections/FormSection";
 
 const ContactPage = () => {
   return (
@@ -15,6 +16,7 @@ const ContactPage = () => {
         >
           Message Me
         </Typography>
+        <FormSection />
       </div>
     </PageLayout>
   );

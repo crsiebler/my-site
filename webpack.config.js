@@ -27,6 +27,7 @@ Encore.setOutputPath("public/build/")
     components: path.resolve(__dirname, "./assets/components"),
     views: path.resolve(__dirname, "./assets/views"),
     styles: path.resolve(__dirname, "./assets/styles"),
+    utils: path.resolve(__dirname, "./assets/utils/"),
   })
   .enableSassLoader()
   .enableReactPreset();
