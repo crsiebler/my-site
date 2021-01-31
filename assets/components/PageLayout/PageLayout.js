@@ -14,6 +14,9 @@ const useStyles = makeStyles(() => ({
     flexDirection: "column",
     minHeight: "100vh",
   },
+  container: {
+    marginBottom: "20px",
+  },
 }));
 
 const PageLayout = (props) => {
@@ -36,7 +39,11 @@ const PageLayout = (props) => {
       <TemporaryDrawer toggleDrawer={toggleDrawer} drawerOpen={drawerOpen}>
         <NavagationSection />
       </TemporaryDrawer>
-      <Container component="main" maxWidth="lg">
+      <Container
+        component="main"
+        maxWidth="lg"
+        classes={{ root: classes.container }}
+      >
         {children}
       </Container>
       <ScrollTop />

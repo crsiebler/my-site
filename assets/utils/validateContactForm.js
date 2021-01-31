@@ -3,6 +3,7 @@ const validateContactForm = (id, value) => {
   let text = "";
   switch (id) {
     case "name":
+    case "subject":
       if (value.length > 100) {
         error = true;
         text = "Too long";

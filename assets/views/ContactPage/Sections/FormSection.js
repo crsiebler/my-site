@@ -10,6 +10,7 @@ import EmailIcon from "@material-ui/icons/Email";
 import PhoneIcon from "@material-ui/icons/Phone";
 import SendIcon from "@material-ui/icons/Send";
 import ClearIcon from "@material-ui/icons/Clear";
+import SubjectIcon from "@material-ui/icons/Subject";
 import validateContactForm from "utils/validateContactForm";
 
 const useStyles = makeStyles((theme) => ({
@@ -31,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
 
 const formData = {
   name: "",
+  subject: "",
   email: "",
   phone: "",
   message: "",
@@ -38,9 +40,10 @@ const formData = {
 
 const formErrors = {
   name: { error: false, text: "" },
-  email: false,
-  phone: false,
-  message: false,
+  subject: { error: false, text: "" },
+  email: { error: false, text: "" },
+  phone: { error: false, text: "" },
+  message: { error: false, text: "" },
 };
 
 const FormSection = () => {
@@ -59,11 +62,10 @@ const FormSection = () => {
     if (Object.keys(errors).some((k) => errors[k].error)) {
       console.log("form contains errors");
     } else {
-      console.log("submit");
       axios
         .post("/api/contact", payload)
         .then((response) => {
-          console.log("Success");
+          console.log(response);
         })
         .catch((error) => {
           console.log(error);
@@ -98,6 +100,26 @@ const FormSection = () => {
               value={payload.name}
               error={errors.name.error}
               helperText={errors.name.text}
+              onChange={handleChange}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              required
+              id="subject"
+              label="Subject"
+              variant="outlined"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <SubjectIcon />
+                  </InputAdornment>
+                ),
+              }}
+              className={classes.textField}
+              value={payload.subject}
+              error={errors.subject.error}
+              helperText={errors.subject.text}
               onChange={handleChange}
             />
           </Grid>
