@@ -1,13 +1,15 @@
 import React from "react";
 import PageLayout from "components/PageLayout/PageLayout";
-import Album from "./Album/Album";
+import AlbumHeroSection from "./Sections/AlbumHeroSection";
+import AlbumGridSection from "./Sections/AlbumGridSection";
 
 const PorfolioPage = () => {
   return (
     <PageLayout title="Portfolio">
-      <div>
-        <Album />
-      </div>
+      <main>
+        <AlbumHeroSection />
+        <AlbumGridSection />
+      </main>
     </PageLayout>
   );
 };
