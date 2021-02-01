@@ -8,11 +8,10 @@ const Copyright = () => {
   return (
     <Typography variant="body2" color="textSecondary">
       {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+      <Link color="inherit" href="/">
+        Cory Siebler
       </Link>{" "}
       {new Date().getFullYear()}
-      {"."}
     </Typography>
   );
 };
@@ -35,7 +34,7 @@ const StickyFooter = () => {
     <footer className={classes.footer}>
       <Container maxWidth="sm">
         <Typography variant="body1">
-          My sticky footer can be found here.
+          "Only the mediocre are always at their best" - J. Giraudoux
         </Typography>
         <Copyright />
       </Container>

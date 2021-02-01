@@ -1,4 +1,5 @@
 import React from "react";
+import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import PageLayout from "components/PageLayout/PageLayout";
 import FormSection from "./Sections/FormSection";
@@ -6,7 +7,7 @@ import FormSection from "./Sections/FormSection";
 const ContactPage = () => {
   return (
     <PageLayout title="Contact">
-      <div>
+      <Container maxWidth="md">
         <Typography
           component="h1"
           variant="h2"
@@ -17,7 +18,7 @@ const ContactPage = () => {
           Message Me
         </Typography>
         <FormSection />
-      </div>
+      </Container>
     </PageLayout>
   );
 };

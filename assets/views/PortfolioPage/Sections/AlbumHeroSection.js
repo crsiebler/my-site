@@ -36,12 +36,22 @@ const AlbumHeroSection = () => {
         <div className={classes.heroButtons}>
           <Grid container spacing={2} justify="center">
             <Grid item>
-              <Button variant="contained" color="primary" href="/contact">
+              <Button
+                variant="contained"
+                color="primary"
+                component="a"
+                href="/contact"
+              >
                 Contact Me
               </Button>
             </Grid>
             <Grid item>
-              <Button variant="outlined" color="primary" href="/resume">
+              <Button
+                variant="outlined"
+                color="primary"
+                component="a"
+                href="/resume"
+              >
                 See Resume
               </Button>
             </Grid>

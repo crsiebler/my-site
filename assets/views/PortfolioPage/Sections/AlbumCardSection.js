@@ -39,7 +39,13 @@ const AlbumCardSection = (props) => {
         <Typography>{description}</Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" color="primary" href={href} target="_blank">
+        <Button
+          size="small"
+          color="primary"
+          component="a"
+          href={href}
+          target="_blank"
+        >
           More Information
         </Button>
       </CardActions>

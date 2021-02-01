@@ -16,6 +16,7 @@ const useStyles = makeStyles(() => ({
   },
   container: {
     marginBottom: "20px",
+    padding: "0px",
   },
 }));
 
@@ -40,7 +41,7 @@ const PageLayout = (props) => {
       </TemporaryDrawer>
       <Container
         component="main"
-        maxWidth="lg"
+        maxWidth={false}
         classes={{ root: classes.container }}
       >
         {children}

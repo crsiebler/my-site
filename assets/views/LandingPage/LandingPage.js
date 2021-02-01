@@ -1,33 +1,34 @@
 import React from "react";
-import Button from "@material-ui/core/Button";
-import Box from "@material-ui/core/Box";
-import Typography from "@material-ui/core/Typography";
+import { makeStyles } from "@material-ui/core/styles";
 import PageLayout from "components/PageLayout/PageLayout";
+import LandingHeroSection from "./Sections/LandingHeroSection";
+import LandingOverlaySection from "./Sections/LandingOverlaySection";
+
+const backgroundImage = "images/splash-arizona-sunset.jpg";
+
+const useStyles = makeStyles(() => ({
+  background: {
+    backgroundImage: `url(${backgroundImage})`,
+    backgroundColor: "#7fc7d9", // Average color of the background image.
+    backgroundPosition: "center",
+  },
+}));
 
 const LandingPage = () => {
+  const classes = useStyles();
+
   return (
     <PageLayout title="Home">
-      <div>
-        <Typography
-          component="h1"
-          variant="h2"
-          align="center"
-          color="textPrimary"
-          gutterBottom
-        >
-          Howdy Y'all
-        </Typography>
-        <Box my={2}>
-          {[...new Array(50)]
-            .map(
-              () => `Cras mattis consectetur purus sit amet fermentum.
-            Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-            Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
-            )
-            .join("\n")}
-        </Box>
-      </div>
+      <main>
+        <LandingHeroSection backgroundClassName={classes.background}>
+          <img
+            style={{ display: "none" }}
+            src={backgroundImage}
+            alt="increase priority"
+          />
+          <LandingOverlaySection />
+        </LandingHeroSection>
+      </main>
     </PageLayout>
   );
 };
