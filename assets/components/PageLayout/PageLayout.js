@@ -15,7 +15,6 @@ const useStyles = makeStyles(() => ({
     minHeight: "100vh",
   },
   container: {
-    marginBottom: "20px",
     padding: "0px",
   },
 }));
