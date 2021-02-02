@@ -4,7 +4,7 @@ import PageLayout from "components/PageLayout/PageLayout";
 import LandingHeroSection from "./Sections/LandingHeroSection";
 import LandingOverlaySection from "./Sections/LandingOverlaySection";
 
-const backgroundImage = "images/splash-arizona-sunset.jpg";
+const backgroundImage = "build/images/splash-arizona-sunset.jpg";
 
 const useStyles = makeStyles(() => ({
   background: {
