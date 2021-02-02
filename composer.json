@@ -1,4 +1,6 @@
 {
+    "name": "crs/website",
+    "description": "Personal Website for Cory Siebler",
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "dev",
@@ -41,7 +43,7 @@
         "webonyx/graphql-php": "^14.5"
     },
     "require-dev": {
-        "symfony/dotenv": "5.2.*",
+        "symfony/dotenv": "5.2.*"
     },
     "config": {
         "optimize-autoloader": true,
