@@ -986,13 +986,6 @@
     mkdirp "^1.0.4"
     rimraf "^3.0.2"
 
-"@symfony/stimulus-bridge@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@symfony/stimulus-bridge/-/stimulus-bridge-1.1.0.tgz#34548c633fe49bcda84cc812939f63640e698af7"
-  integrity sha512-Sz8iwKQHBjrgCnxCGwH87S/J/Min0gX3EuXJaHi4vpibY3BjVm+WYuP8+OYPkMIROPyNZKYgTffFfJLBAFLwFQ==
-  dependencies:
-    webpack-virtual-modules "^0.3.2"
-
 "@symfony/webpack-encore@^1.0.0":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@symfony/webpack-encore/-/webpack-encore-1.0.2.tgz#7d98626c8424abf04f07f8f0ad626aa9b3f7e7d7"
@@ -2120,7 +2113,7 @@ debug@2.6.9:
   dependencies:
     ms "2.0.0"
 
-debug@^3.0.0, debug@^3.1.1, debug@^3.2.6:
+debug@^3.1.1, debug@^3.2.6:
   version "3.2.7"
   resolved "https://registry.yarnpkg.com/debug/-/debug-3.2.7.tgz#72580b7e9145fb39b6676f9c5e5fb100b934179a"
   integrity sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==
@@ -5661,13 +5654,6 @@ webpack-sources@^2.1.1, webpack-sources@^2.2.0:
   dependencies:
     source-list-map "^2.0.1"
     source-map "^0.6.1"
-
-webpack-virtual-modules@^0.3.2:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/webpack-virtual-modules/-/webpack-virtual-modules-0.3.2.tgz#b7baa30971a22d99451f897db053af48ec29ad2c"
-  integrity sha512-RXQXioY6MhzM4CNQwmBwKXYgBs6ulaiQ8bkNQEl2J6Z+V+s7lgl/wGvaI/I0dLnYKB8cKsxQc17QOAVIphPLDw==
-  dependencies:
-    debug "^3.0.0"
 
 webpack@^5.12:
   version "5.19.0"
