@@ -1,6 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
 import "styles/main.scss";
@@ -21,6 +26,7 @@ ReactDOM.render(
         <Route exact path="/portfolio" component={PortfolioPage} />
         <Route exact path="/resume" component={ResumePage} />
         <Route exact path="/contact" component={ContactPage} />
+        <Redirect to="/" />
       </Switch>
     </Router>
   </>,

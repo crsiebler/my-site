@@ -34,7 +34,8 @@ const StickyFooter = () => {
     <footer className={classes.footer}>
       <Container maxWidth="sm">
         <Typography variant="body1">
-          "Only the mediocre are always at their best" - J. Giraudoux
+          "Only the mediocre are always at their best"
+          <br />- Jean Giraudoux
         </Typography>
         <Copyright />
       </Container>
