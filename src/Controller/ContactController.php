@@ -16,9 +16,10 @@ class ContactController extends AbstractController
     public function index(Request $request, MailerInterface $mailer): Response
     {
         $payload = json_decode($request->getContent(), true);
+        $receiptient = $this->getParameter('app.admin_email');
         $email = (new TemplatedEmail())
-            ->from(new Address('%env(EMAIL_ADDRESS)%', 'Your Website'))
-            ->to(new Address('%env(EMAIL_ADDRESS)%', 'Cory Siebler'))
+            ->from(new Address($receiptient, 'Your Website'))
+            ->to(new Address($receiptient, 'Cory Siebler'))
             ->subject($payload['subject'])
             ->htmlTemplate('email/contact.html.twig')
             ->context([
