@@ -17,8 +17,8 @@ class ContactController extends AbstractController
     {
         $payload = json_decode($request->getContent(), true);
         $email = (new TemplatedEmail())
-            ->from(new Address($payload['email'], $payload['name']))
-            ->to(new Address('cory.siebler@cox.net', 'Cory Siebler'))
+            ->from(new Address('%env(EMAIL_ADDRESS)%', 'Your Website'))
+            ->to(new Address('%env(EMAIL_ADDRESS)%', 'Cory Siebler'))
             ->subject($payload['subject'])
             ->htmlTemplate('email/contact.html.twig')
             ->context([

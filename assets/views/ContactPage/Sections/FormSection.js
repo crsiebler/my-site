@@ -1,4 +1,8 @@
 import React from "react";
+import {
+  GoogleReCaptchaProvider,
+  GoogleReCaptcha,
+} from "react-google-recaptcha-v3";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
@@ -38,6 +42,7 @@ const FormSection = () => {
   const [payload, setPayload] = React.useState(formData);
   const [errors, setErrors] = React.useState(formErrors);
   const [alert, setAlert] = React.useState(formAlert);
+  const [captcha, setCaptcha] = React.useState(false);
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -47,7 +52,13 @@ const FormSection = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (Object.keys(errors).some((k) => errors[k].error)) {
+    if (!captcha) {
+      setAlert({
+        open: true,
+        severity: "warning",
+        message: "Must Complete Captcha",
+      });
+    } else if (Object.keys(errors).some((k) => errors[k].error)) {
       setAlert({
         open: true,
         severity: "warning",
@@ -74,6 +85,10 @@ const FormSection = () => {
     }
   };
 
+  const handleVerify = () => {
+    setCaptcha(true);
+  };
+
   const handleClear = (e) => {
     e.preventDefault();
     setPayload(formData);
@@ -85,140 +100,145 @@ const FormSection = () => {
   };
 
   return (
-    <form autoComplete="on" method="post" onSubmit={handleSubmit}>
-      <div className={classes.root}>
-        <Snackbar
-          anchorOrigin={{ vertical: "top", horizontal: "right" }}
-          open={alert.open}
-          onClose={handleClose}
-          autoHideDuration={5000}
-        >
-          <Alert onClose={handleClose} severity={alert.severity}>
-            {alert.message}
-          </Alert>
-        </Snackbar>
-        <Grid container spacing={3}>
-          <Grid item xs={12}>
-            <TextField
-              required
-              id="name"
-              label="Name"
-              variant="outlined"
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <AccountCircle />
-                  </InputAdornment>
-                ),
-              }}
-              className={classes.textField}
-              value={payload.name}
-              error={errors.name.error}
-              helperText={errors.name.text}
-              onChange={handleChange}
-            />
+    <GoogleReCaptchaProvider reCaptchaKey="6LfKPUgaAAAAAGzSJmKt8PKVnpFi4Q0J06wtHUYB">
+      <form autoComplete="on" method="post" onSubmit={handleSubmit}>
+        <div className={classes.root}>
+          <Snackbar
+            anchorOrigin={{ vertical: "top", horizontal: "right" }}
+            open={alert.open}
+            onClose={handleClose}
+            autoHideDuration={5000}
+          >
+            <Alert onClose={handleClose} severity={alert.severity}>
+              {alert.message}
+            </Alert>
+          </Snackbar>
+          <Grid container spacing={3}>
+            <Grid item xs={12}>
+              <TextField
+                required
+                id="name"
+                label="Name"
+                variant="outlined"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <AccountCircle />
+                    </InputAdornment>
+                  ),
+                }}
+                className={classes.textField}
+                value={payload.name}
+                error={errors.name.error}
+                helperText={errors.name.text}
+                onChange={handleChange}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                required
+                id="subject"
+                label="Subject"
+                variant="outlined"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <SubjectIcon />
+                    </InputAdornment>
+                  ),
+                }}
+                className={classes.textField}
+                value={payload.subject}
+                error={errors.subject.error}
+                helperText={errors.subject.text}
+                onChange={handleChange}
+              />
+            </Grid>
+            <Grid item xs={6}>
+              <TextField
+                required
+                id="email"
+                label="Email"
+                variant="outlined"
+                type="email"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <EmailIcon />
+                    </InputAdornment>
+                  ),
+                }}
+                className={classes.textField}
+                value={payload.email}
+                error={errors.email.error}
+                helperText={errors.email.text}
+                onChange={handleChange}
+              />
+            </Grid>
+            <Grid item xs={6}>
+              <TextField
+                id="phone"
+                label="Phone"
+                variant="outlined"
+                type="tel"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <PhoneIcon />
+                    </InputAdornment>
+                  ),
+                }}
+                className={classes.textField}
+                value={payload.phone}
+                error={errors.phone.error}
+                helperText={errors.phone.text}
+                onChange={handleChange}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                required
+                id="message"
+                label="Message"
+                variant="outlined"
+                className={classes.textField}
+                multiline
+                rows={10}
+                value={payload.message}
+                error={errors.message.error}
+                helperText={errors.message.text}
+                onChange={handleChange}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <GoogleReCaptcha onVerify={handleVerify} />
+            </Grid>
+            <Grid container item xs={12} spacing={2}>
+              <div className={classes.formControl}>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  type="submit"
+                  className={classes.button}
+                  endIcon={<SendIcon />}
+                >
+                  Send
+                </Button>
+                <Button
+                  variant="contained"
+                  type="reset"
+                  className={classes.button}
+                  endIcon={<ClearIcon />}
+                  onClick={handleClear}
+                >
+                  Clear
+                </Button>
+              </div>
+            </Grid>
           </Grid>
-          <Grid item xs={12}>
-            <TextField
-              required
-              id="subject"
-              label="Subject"
-              variant="outlined"
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <SubjectIcon />
-                  </InputAdornment>
-                ),
-              }}
-              className={classes.textField}
-              value={payload.subject}
-              error={errors.subject.error}
-              helperText={errors.subject.text}
-              onChange={handleChange}
-            />
-          </Grid>
-          <Grid item xs={6}>
-            <TextField
-              required
-              id="email"
-              label="Email"
-              variant="outlined"
-              type="email"
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <EmailIcon />
-                  </InputAdornment>
-                ),
-              }}
-              className={classes.textField}
-              value={payload.email}
-              error={errors.email.error}
-              helperText={errors.email.text}
-              onChange={handleChange}
-            />
-          </Grid>
-          <Grid item xs={6}>
-            <TextField
-              id="phone"
-              label="Phone"
-              variant="outlined"
-              type="tel"
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <PhoneIcon />
-                  </InputAdornment>
-                ),
-              }}
-              className={classes.textField}
-              value={payload.phone}
-              error={errors.phone.error}
-              helperText={errors.phone.text}
-              onChange={handleChange}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              required
-              id="message"
-              label="Message"
-              variant="outlined"
-              className={classes.textField}
-              multiline
-              rows={10}
-              value={payload.message}
-              error={errors.message.error}
-              helperText={errors.message.text}
-              onChange={handleChange}
-            />
-          </Grid>
-          <Grid container item xs={12} spacing={2}>
-            <div className={classes.formControl}>
-              <Button
-                variant="contained"
-                color="primary"
-                type="submit"
-                className={classes.button}
-                endIcon={<SendIcon />}
-              >
-                Send
-              </Button>
-              <Button
-                variant="contained"
-                type="reset"
-                className={classes.button}
-                endIcon={<ClearIcon />}
-                onClick={handleClear}
-              >
-                Clear
-              </Button>
-            </div>
-          </Grid>
-        </Grid>
-      </div>
-    </form>
+        </div>
+      </form>
+    </GoogleReCaptchaProvider>
   );
 };
 

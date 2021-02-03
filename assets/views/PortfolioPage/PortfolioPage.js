@@ -6,10 +6,10 @@ import AlbumGridSection from "./Sections/AlbumGridSection";
 const PorfolioPage = () => {
   return (
     <PageLayout title="Portfolio">
-      <main>
+      <>
         <AlbumHeroSection />
         <AlbumGridSection />
-      </main>
+      </>
     </PageLayout>
   );
 };

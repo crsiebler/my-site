@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   },
   marked: {
     height: 4,
-    width: 73,
+    width: 150,
     display: "block",
     margin: `${theme.spacing(1)}px auto 0`,
     backgroundColor: theme.palette.secondary.main,
@@ -50,7 +50,7 @@ const LandingOverlaySection = () => {
         My Resume
       </Button>
       <Typography variant="body2" color="inherit" className={classes.more}>
-        Discover me
+        Discover more
       </Typography>
     </>
   );

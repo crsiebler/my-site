@@ -19,16 +19,14 @@ const LandingPage = () => {
 
   return (
     <PageLayout title="Home">
-      <main>
-        <LandingHeroSection backgroundClassName={classes.background}>
-          <img
-            style={{ display: "none" }}
-            src={backgroundImage}
-            alt="increase priority"
-          />
-          <LandingOverlaySection />
-        </LandingHeroSection>
-      </main>
+      <LandingHeroSection backgroundClassName={classes.background}>
+        <img
+          style={{ display: "none" }}
+          src={backgroundImage}
+          alt="desert sunset"
+        />
+        <LandingOverlaySection />
+      </LandingHeroSection>
     </PageLayout>
   );
 };
