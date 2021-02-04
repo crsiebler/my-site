@@ -27,6 +27,7 @@ Encore.setOutputPath("public/build/")
     api: path.resolve(__dirname, "./assets/api"),
     components: path.resolve(__dirname, "./assets/components"),
     constants: path.resolve(__dirname, "./assets/constants"),
+    icons: path.resolve(__dirname, "./assets/icons"),
     styles: path.resolve(__dirname, "./assets/styles"),
     utils: path.resolve(__dirname, "./assets/utils/"),
     views: path.resolve(__dirname, "./assets/views"),

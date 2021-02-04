@@ -4,7 +4,7 @@ import PageLayout from "components/PageLayout/PageLayout";
 import LandingHeroSection from "./Sections/LandingHeroSection";
 import LandingOverlaySection from "./Sections/LandingOverlaySection";
 
-const backgroundImage = "build/images/splash-arizona-sunset.jpg";
+const backgroundImage = "build/images/splash-desert.jpg";
 
 const useStyles = makeStyles(() => ({
   background: {
@@ -19,14 +19,16 @@ const LandingPage = () => {
 
   return (
     <PageLayout title="Home">
-      <LandingHeroSection backgroundClassName={classes.background}>
-        <img
-          style={{ display: "none" }}
-          src={backgroundImage}
-          alt="desert sunset"
-        />
-        <LandingOverlaySection />
-      </LandingHeroSection>
+      <>
+        <LandingHeroSection backgroundClassName={classes.background}>
+          <img
+            style={{ display: "none" }}
+            src={backgroundImage}
+            alt="desert sunset"
+          />
+          <LandingOverlaySection />
+        </LandingHeroSection>
+      </>
     </PageLayout>
   );
 };

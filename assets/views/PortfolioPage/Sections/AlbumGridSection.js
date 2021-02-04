@@ -19,7 +19,7 @@ const AlbumGridSection = () => {
       <Grid container spacing={4}>
         <Grid item xs={12} sm={6} md={4}>
           <AlbumCardSection
-            imgSrc="build/images/lm-uas-c2.jpg"
+            imgSrc="build/images/project-uas-c2.jpg"
             imgTitle="Lockheed Martin UAS C2"
             title="Unmanned Aerial System (UAS) Command and Control (C2)"
             description="The Lockheed Martin team integrated C2 and ISR systems 
@@ -34,7 +34,7 @@ const AlbumGridSection = () => {
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
           <AlbumCardSection
-            imgSrc="build/images/nasa-sgss.jpg"
+            imgSrc="build/images/project-nasa-sgss.jpg"
             imgTitle="NASA SGSS"
             title="NASA Space Ground Segment Sustainment (SGSS)"
             description="NASA’s Space Network is made up of several Tracking 
@@ -50,7 +50,7 @@ const AlbumGridSection = () => {
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
           <AlbumCardSection
-            imgSrc="build/images/nextiva-products.png"
+            imgSrc="build/images/project-nextos.png"
             imgTitle="Nextiva Products"
             title="Nextiva NextOS"
             description="Nextiva is a cloud-based all-in-one unified business 
@@ -63,7 +63,7 @@ const AlbumGridSection = () => {
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
           <AlbumCardSection
-            imgSrc="build/images/walmart-sierra-vista.png"
+            imgSrc="build/images/project-walmart.png"
             imgTitle="Walmart Sierra Vista"
             title="Walmart at Charlston Crossing"
             description="A new Walmart 43-acre site located in the shopping 
@@ -75,7 +75,7 @@ const AlbumGridSection = () => {
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
           <AlbumCardSection
-            imgSrc="build/images/musical-instrument-museum.jpg"
+            imgSrc="build/images/project-musical-instrument-museum.jpg"
             imgTitle="Musical Instrument Museum"
             title="Musical Instrument Museum"
             description="MIM has a collection of more than 8,000 instruments 
@@ -90,7 +90,7 @@ const AlbumGridSection = () => {
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
           <AlbumCardSection
-            imgSrc="build/images/lone-butte-casino.jpg"
+            imgSrc="build/images/project-lone-butte-casino.jpg"
             imgTitle="Lone Butte Casino"
             title="Lone Butte Casino"
             description="Lone Butte Casino was opened in November of 2008 and 
@@ -99,7 +99,7 @@ const AlbumGridSection = () => {
                 one of three themed passages. One represents earth, one fire 
                 and the third represents water. The art work displayed 
                 throughout the casino is commissioned from local Native 
-                American artists."
+                American artists. General contactor J.E. Dunn Construction."
             href="https://playatgila.com/"
           />
         </Grid>
