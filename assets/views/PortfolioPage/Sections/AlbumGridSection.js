@@ -2,6 +2,12 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
+import projectImg1 from "images/project-uas-c2.jpg";
+import projectImg2 from "images/project-nasa-sgss.jpg";
+import projectImg3 from "images/project-nextos.png";
+import projectImg4 from "images/project-walmart.png";
+import projectImg5 from "images/project-mim.jpg";
+import projectImg6 from "images/project-lone-butte-casino.jpg";
 import AlbumCardSection from "./AlbumCardSection";
 
 const useStyles = makeStyles((theme) => ({
@@ -19,7 +25,7 @@ const AlbumGridSection = () => {
       <Grid container spacing={4}>
         <Grid item xs={12} sm={6} md={4}>
           <AlbumCardSection
-            imgSrc="build/images/project-uas-c2.jpg"
+            imgSrc={projectImg1}
             imgTitle="Lockheed Martin UAS C2"
             title="Unmanned Aerial System (UAS) Command and Control (C2)"
             description="The Lockheed Martin team integrated C2 and ISR systems 
@@ -34,7 +40,7 @@ const AlbumGridSection = () => {
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
           <AlbumCardSection
-            imgSrc="build/images/project-nasa-sgss.jpg"
+            imgSrc={projectImg2}
             imgTitle="NASA SGSS"
             title="NASA Space Ground Segment Sustainment (SGSS)"
             description="NASA’s Space Network is made up of several Tracking 
@@ -50,7 +56,7 @@ const AlbumGridSection = () => {
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
           <AlbumCardSection
-            imgSrc="build/images/project-nextos.png"
+            imgSrc={projectImg3}
             imgTitle="Nextiva Products"
             title="Nextiva NextOS"
             description="Nextiva is a cloud-based all-in-one unified business 
@@ -63,7 +69,7 @@ const AlbumGridSection = () => {
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
           <AlbumCardSection
-            imgSrc="build/images/project-walmart.png"
+            imgSrc={projectImg4}
             imgTitle="Walmart Sierra Vista"
             title="Walmart at Charlston Crossing"
             description="A new Walmart 43-acre site located in the shopping 
@@ -75,7 +81,7 @@ const AlbumGridSection = () => {
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
           <AlbumCardSection
-            imgSrc="build/images/project-musical-instrument-museum.jpg"
+            imgSrc={projectImg5}
             imgTitle="Musical Instrument Museum"
             title="Musical Instrument Museum"
             description="MIM has a collection of more than 8,000 instruments 
@@ -90,7 +96,7 @@ const AlbumGridSection = () => {
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
           <AlbumCardSection
-            imgSrc="build/images/project-lone-butte-casino.jpg"
+            imgSrc={projectImg6}
             imgTitle="Lone Butte Casino"
             title="Lone Butte Casino"
             description="Lone Butte Casino was opened in November of 2008 and 

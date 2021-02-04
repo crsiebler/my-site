@@ -28,13 +28,14 @@ Encore.setOutputPath("public/build/")
     components: path.resolve(__dirname, "./assets/components"),
     constants: path.resolve(__dirname, "./assets/constants"),
     icons: path.resolve(__dirname, "./assets/icons"),
+    images: path.resolve(__dirname, "./assets/images"),
     styles: path.resolve(__dirname, "./assets/styles"),
     utils: path.resolve(__dirname, "./assets/utils/"),
     views: path.resolve(__dirname, "./assets/views"),
   })
   .copyFiles({
     from: "./assets/images",
-    to: "images/[path][name].[ext]",
+    to: "images/[path][name].[hash:8].[ext]",
     pattern: /\.(png|jpg|jpeg|svg)$/,
   })
   .enableSassLoader()

@@ -1,14 +1,13 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import PageLayout from "components/PageLayout/PageLayout";
+import splash from "images/splash-desert.jpg";
 import LandingHeroSection from "./Sections/LandingHeroSection";
 import LandingOverlaySection from "./Sections/LandingOverlaySection";
 
-const backgroundImage = "build/images/splash-desert.jpg";
-
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   background: {
-    backgroundImage: `url(${backgroundImage})`,
+    backgroundImage: `url(${splash})`,
     backgroundColor: "#7fc7d9", // Average color of the background image.
     backgroundPosition: "center",
   },
@@ -21,11 +20,7 @@ const LandingPage = () => {
     <PageLayout title="Home">
       <>
         <LandingHeroSection backgroundClassName={classes.background}>
-          <img
-            style={{ display: "none" }}
-            src={backgroundImage}
-            alt="desert sunset"
-          />
+          <img style={{ display: "none" }} src={splash} alt="desert sunset" />
           <LandingOverlaySection />
         </LandingHeroSection>
       </>
