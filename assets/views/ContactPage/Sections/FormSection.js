@@ -11,7 +11,6 @@ import Snackbar from "@material-ui/core/Snackbar";
 import TextField from "@material-ui/core/TextField";
 import Alert from "@material-ui/lab/Alert";
 import AccountCircle from "@material-ui/icons/AccountCircle";
-import ClearIcon from "@material-ui/icons/Clear";
 import EmailIcon from "@material-ui/icons/Email";
 import PhoneIcon from "@material-ui/icons/Phone";
 import SendIcon from "@material-ui/icons/Send";
@@ -28,12 +27,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
   },
   button: {
-    minWidth: "100px",
-  },
-  formControl: {
-    "& > *": {
-      margin: theme.spacing(1),
-    },
+    width: "100%",
   },
 }));
 
@@ -87,12 +81,6 @@ const FormSection = () => {
 
   const handleVerify = () => {
     setCaptcha(true);
-  };
-
-  const handleClear = (e) => {
-    e.preventDefault();
-    setPayload(formData);
-    setErrors(formErrors);
   };
 
   const handleClose = () => {
@@ -213,27 +201,16 @@ const FormSection = () => {
             <Grid item xs={12}>
               <GoogleReCaptcha onVerify={handleVerify} />
             </Grid>
-            <Grid container item xs={12} spacing={2}>
-              <div className={classes.formControl}>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  type="submit"
-                  className={classes.button}
-                  endIcon={<SendIcon />}
-                >
-                  Send
-                </Button>
-                <Button
-                  variant="contained"
-                  type="reset"
-                  className={classes.button}
-                  endIcon={<ClearIcon />}
-                  onClick={handleClear}
-                >
-                  Clear
-                </Button>
-              </div>
+            <Grid item xs={12}>
+              <Button
+                variant="contained"
+                color="primary"
+                type="submit"
+                className={classes.button}
+                endIcon={<SendIcon />}
+              >
+                Send your message
+              </Button>
             </Grid>
           </Grid>
         </div>
