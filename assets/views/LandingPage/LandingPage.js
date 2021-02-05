@@ -5,7 +5,7 @@ import splash from "images/splash-desert.jpg";
 import LandingHeroSection from "./Sections/LandingHeroSection";
 import LandingOverlaySection from "./Sections/LandingOverlaySection";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   background: {
     backgroundImage: `url(${splash})`,
     backgroundColor: "#7fc7d9", // Average color of the background image.
