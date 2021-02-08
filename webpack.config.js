@@ -27,6 +27,7 @@ Encore.setOutputPath("public/build/")
     api: path.resolve(__dirname, "./assets/api"),
     components: path.resolve(__dirname, "./assets/components"),
     constants: path.resolve(__dirname, "./assets/constants"),
+    docs: path.resolve(__dirname, "./assets/docs"),
     icons: path.resolve(__dirname, "./assets/icons"),
     images: path.resolve(__dirname, "./assets/images"),
     styles: path.resolve(__dirname, "./assets/styles"),
@@ -38,6 +39,12 @@ Encore.setOutputPath("public/build/")
     to: "images/[path][name].[hash:8].[ext]",
     pattern: /\.(png|jpg|jpeg|svg)$/,
   })
+  .copyFiles({
+    from: "./assets/docs",
+    to: "docs/[path][name].[hash:8].[ext]",
+    pattern: /\.(pdf)$/,
+  })
+  .addLoader({ test: /\.(pdf)$/, loader: "file-loader" })
   .enableSassLoader()
   .enableReactPreset();
 
