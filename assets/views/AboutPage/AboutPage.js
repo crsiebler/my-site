@@ -25,6 +25,7 @@ const AboutPage = () => {
         >
           Learn More
         </Typography>
+        <Typography variant="body1">Under Construction</Typography>
       </div>
     </PageLayout>
   );

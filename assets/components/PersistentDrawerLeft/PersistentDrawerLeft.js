@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 const PersistentDrawerLeft = (props) => {
   const classes = useStyles();
   const theme = useTheme();
-  const { drawerOpen, onChevronClick } = props;
+  const { drawerOpen, onChevronClick, children } = props;
 
   return (
     <Drawer
@@ -49,6 +49,7 @@ const PersistentDrawerLeft = (props) => {
           )}
         </IconButton>
       </div>
+      {children}
     </Drawer>
   );
 };

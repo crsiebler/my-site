@@ -2,17 +2,25 @@ import React from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import TemporaryDrawer from "components/TemporaryDrawer/TemporaryDrawer";
+import ResponsiveAppBar from "components/ResponsiveAppBar/ResponsiveAppBar";
+import ResponsiveDrawer from "components/ResponsiveDrawer/ResponsiveDrawer";
 import ScrollTop from "components/ScrollTop/ScrollTop";
 import StickyFooter from "components/StickyFooter/StickyFooter";
-import Header from "./Sections/HeaderSection";
+import { drawerWidth } from "constants/drawerConstants";
+import { menuItems } from "constants/navagationConstants";
+import AvatarSection from "./Sections/AvatarSection";
 import NavagationSection from "./Sections/NavagationSection";
+import { Typography } from "@material-ui/core";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     flexDirection: "column",
     minHeight: "100vh",
+    [theme.breakpoints.up("md")]: {
+      width: `calc(100% - ${drawerWidth}px)`,
+      marginLeft: drawerWidth,
+    },
   },
   container: {
     padding: "0px",
@@ -22,22 +30,27 @@ const useStyles = makeStyles(() => ({
 const PageLayout = (props) => {
   const { children, title } = props;
   const classes = useStyles();
-  const [drawerOpen, setDrawerOpen] = React.useState(false);
+  const [menuOpen, setMenuOpen] = React.useState(false);
 
-  const toggleDrawer = () => {
-    setDrawerOpen(!drawerOpen);
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
   };
 
   return (
     <div className={classes.root}>
-      <Header
+      <ResponsiveAppBar
+        menuItems={menuItems}
         title={title}
-        onMenuClick={toggleDrawer}
-        drawerOpen={drawerOpen}
-      />
-      <TemporaryDrawer toggleDrawer={toggleDrawer} drawerOpen={drawerOpen}>
+        onMenuClick={toggleMenu}
+        menuOpen={menuOpen}
+      >
+        <AvatarSection />
         <NavagationSection />
-      </TemporaryDrawer>
+      </ResponsiveAppBar>
+      <ResponsiveDrawer>
+        <AvatarSection />
+        <NavagationSection />
+      </ResponsiveDrawer>
       <Container
         component="main"
         maxWidth={false}
@@ -53,7 +66,11 @@ const PageLayout = (props) => {
 
 PageLayout.propTypes = {
   children: PropTypes.element.isRequired,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
+};
+
+PageLayout.defaultProps = {
+  title: "Cory Siebler",
 };
 
 export default PageLayout;
