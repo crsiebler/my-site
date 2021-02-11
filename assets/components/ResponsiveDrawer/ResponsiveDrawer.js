@@ -8,6 +8,7 @@ const useStyles = makeStyles(() => ({
   drawerPaper: {
     width: drawerWidth,
     backgroundColor: drawerColor,
+    overflow: "hidden",
   },
 }));
 
