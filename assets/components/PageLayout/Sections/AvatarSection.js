@@ -5,7 +5,7 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import IconButton from "@material-ui/core/IconButton";
 import portrait from "images/portrait.jpeg";
-import { menuItems } from "constants/navagationConstants";
+import { menuItems } from "constants/navigationConstants";
 
 const useStyles = makeStyles((theme) => ({
   container: {
