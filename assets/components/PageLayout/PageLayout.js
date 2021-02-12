@@ -7,10 +7,9 @@ import ResponsiveDrawer from "components/ResponsiveDrawer/ResponsiveDrawer";
 import ScrollTop from "components/ScrollTop/ScrollTop";
 import StickyFooter from "components/StickyFooter/StickyFooter";
 import { drawerWidth } from "constants/drawerConstants";
-import { menuItems } from "constants/navagationConstants";
+import { menuItems } from "constants/navigationConstants";
 import AvatarSection from "./Sections/AvatarSection";
-import NavagationSection from "./Sections/NavagationSection";
-import { Typography } from "@material-ui/core";
+import NavigationSection from "./Sections/NavigationSection";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -45,11 +44,11 @@ const PageLayout = (props) => {
         menuOpen={menuOpen}
       >
         <AvatarSection />
-        <NavagationSection />
+        <NavigationSection />
       </ResponsiveAppBar>
       <ResponsiveDrawer>
         <AvatarSection />
-        <NavagationSection />
+        <NavigationSection />
       </ResponsiveDrawer>
       <Container
         component="main"
