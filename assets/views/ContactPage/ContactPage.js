@@ -20,6 +20,7 @@ const ContactPage = () => {
       <div className={classes.content}>
         <Container maxWidth="md">
           <Typography
+            id="back-to-top-anchor"
             component="h1"
             variant="h2"
             align="center"
