@@ -6,16 +6,9 @@
   "repository": "https://github.com/crsiebler/my-site",
   "logo": "https://corysiebler.com/favicon.svg",
   "success_url": "/",
-  "scripts": {
-    "postdeploy": "bundle exec rake bootstrap"
-  },
+  "scripts": {},
   "env": {},
-  "formation": {
-    "web": {
-      "quantity": 1,
-      "size": "standard-1x"
-    }
-  },
+  "formation": {},
   "addons": [],
   "buildpacks": [
     {
