@@ -6,10 +6,10 @@
     "configurations": [
         {
             "type": "pwa-chrome",
-            "request": "launch",
+            "request": "attach",
             "name": "Brave",
             "url": "https://localhost:8000",
-            "runtimeExecutable": "C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe",
+            "port": 9222,
             "webRoot": "${workspaceFolder}"
         }
     ]

@@ -12,7 +12,7 @@ const SimpleAppBar = (props) => {
   return (
     <div>
       <AppBar position="static">
-        <Toolbar id="back-to-top-anchor">
+        <Toolbar>
           <IconButton
             edge="start"
             color="inherit"
