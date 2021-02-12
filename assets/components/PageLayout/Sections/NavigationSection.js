@@ -10,7 +10,7 @@ import PersonIcon from "@material-ui/icons/Person";
 import WorkIcon from "@material-ui/icons/Work";
 import InfoIcon from "@material-ui/icons/Info";
 import SendIcon from "@material-ui/icons/Send";
-import { iconColorPrimary } from "constants/navagationConstants";
+import { iconColorPrimary } from "constants/navigationConstants";
 
 const useStyles = makeStyles(() => ({
   text: {
@@ -22,7 +22,7 @@ const ListItemLink = (props) => {
   return <ListItem button component="a" {...props} />;
 };
 
-const NavagationSection = () => {
+const NavigationSection = () => {
   const classes = useStyles();
 
   return (
@@ -64,4 +64,4 @@ const NavagationSection = () => {
   );
 };
 
-export default NavagationSection;
+export default NavigationSection;

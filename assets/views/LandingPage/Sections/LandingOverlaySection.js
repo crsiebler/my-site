@@ -31,7 +31,12 @@ const LandingOverlaySection = () => {
 
   return (
     <>
-      <Typography align="center" variant="h2" marked="center">
+      <Typography
+        id="back-to-top-anchor"
+        align="center"
+        variant="h2"
+        marked="center"
+      >
         Welcome to my Adventures
         <span className={classes.marked} />
       </Typography>

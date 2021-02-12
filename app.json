@@ -1,0 +1,22 @@
+{
+  "name": "Cory Siebler",
+  "description": "Personal website for Cory Siebler.",
+  "keywords": ["php", "javascript", "symfony", "react"],
+  "website": "https://corysiebler.com/",
+  "repository": "https://github.com/crsiebler/my-site",
+  "logo": "https://corysiebler.com/favicon.svg",
+  "success_url": "/",
+  "scripts": {},
+  "env": {},
+  "formation": {},
+  "addons": [],
+  "buildpacks": [
+    {
+      "url": "heroku/php"
+    },
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "environments": {}
+}
