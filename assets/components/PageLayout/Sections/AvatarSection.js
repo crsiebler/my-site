@@ -23,6 +23,9 @@ const useStyles = makeStyles((theme) => ({
   drawerTitle: {
     color: "#FFF",
   },
+  socials: {
+    textAlign: "center",
+  },
 }));
 
 const AvatarSection = () => {
@@ -33,7 +36,7 @@ const AvatarSection = () => {
       container
       spacing={3}
       direction="column"
-      justify="flex-start"
+      justify="space-evenly"
       alignItems="center"
       className={classes.container}
     >
@@ -51,22 +54,28 @@ const AvatarSection = () => {
           personal website!
         </Typography>
       </Grid>
-      <Grid item xs>
-        <Grid container spacing={1}>
-          {menuItems.map((item, index) => (
-            <Grid item xs key={index}>
-              <IconButton
-                aria-label={item.ariaLabel}
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                href={item.href}
-                target={item.target ? item.target : "_self"}
-              >
-                {item.icon}
-              </IconButton>
-            </Grid>
-          ))}
-        </Grid>
+      <Grid
+        container
+        item
+        xs
+        direction="row"
+        alignItems="center"
+        justify="space-evenly"
+        className={classes.socials}
+      >
+        {menuItems.map((item, index) => (
+          <Grid item xs={4} key={index}>
+            <IconButton
+              aria-label={item.ariaLabel}
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              href={item.href}
+              target={item.target ? item.target : "_self"}
+            >
+              {item.icon}
+            </IconButton>
+          </Grid>
+        ))}
       </Grid>
     </Grid>
   );
