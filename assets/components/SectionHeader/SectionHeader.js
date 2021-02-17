@@ -15,7 +15,7 @@ const SectionHeader = (props) => {
   const { variant, text } = props;
 
   return (
-    <Typography variant={variant} className={classes.content}>
+    <Typography variant={variant} className={classes.content} gutterBottom>
       {text}
     </Typography>
   );
