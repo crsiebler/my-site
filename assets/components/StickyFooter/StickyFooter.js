@@ -3,6 +3,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
+import Hidden from "@material-ui/core/Hidden";
 
 const Copyright = () => {
   return (
@@ -33,10 +34,11 @@ const StickyFooter = () => {
   return (
     <footer className={classes.footer}>
       <Container maxWidth="sm">
-        <Typography variant="body1">
-          "Only the mediocre are always at their best"
-          <br />- Jean Giraudoux
-        </Typography>
+        <Hidden smDown>
+          <Typography variant="body1">
+            "Only the mediocre are always at their best" - Jean Giraudoux
+          </Typography>
+        </Hidden>
         <Copyright />
       </Container>
     </footer>

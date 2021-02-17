@@ -2,6 +2,7 @@ import React from "react";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
+import PhoneIcon from "@material-ui/icons/Phone";
 import MailIcon from "@material-ui/icons/Mail";
 import YouTubeIcon from "@material-ui/icons/YouTube";
 import StackOverflowIcon from "icons/StackOverflowIcon";
@@ -18,6 +19,22 @@ export const menuItems = [
     target: "_blank",
   },
   {
+    ariaLabel: "phone",
+    href: "tel:4803192922",
+    icon: <PhoneIcon style={{ color: iconColorPrimary }} />,
+  },
+  {
+    ariaLabel: "email",
+    href: "mailto:cory.siebler@protonmail.com",
+    icon: <MailIcon style={{ color: iconColorPrimary }} />,
+  },
+  {
+    ariaLabel: "Twitter",
+    href: "https://twitter.com/CorySiebler",
+    icon: <TwitterIcon style={{ color: iconColorPrimary }} />,
+    target: "_blank",
+  },
+  {
     ariaLabel: "GitHub",
     href: "https://github.com/crsiebler",
     icon: <GitHubIcon style={{ color: iconColorPrimary }} />,
@@ -28,17 +45,6 @@ export const menuItems = [
     href: "https://stackoverflow.com/users/story/15115575",
     icon: <StackOverflowIcon style={{ color: iconColorPrimary }} />,
     target: "_blank",
-  },
-  {
-    ariaLabel: "Twitter",
-    href: "https://twitter.com/CorySiebler",
-    icon: <TwitterIcon style={{ color: iconColorPrimary }} />,
-    target: "_blank",
-  },
-  {
-    ariaLabel: "email",
-    href: "mailto:cory.siebler@protonmail.com",
-    icon: <MailIcon style={{ color: iconColorPrimary }} />,
   },
 ];
 

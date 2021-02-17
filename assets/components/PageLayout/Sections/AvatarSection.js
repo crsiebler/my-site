@@ -4,13 +4,12 @@ import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import IconButton from "@material-ui/core/IconButton";
-import portrait from "images/portrait.jpeg";
+import avatar from "images/avatar.jpg";
 import { menuItems } from "constants/navigationConstants";
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    marginTop: "5px",
-    marginBottom: "5px",
+    padding: theme.spacing(1, 1, 1),
   },
   avatar: {
     width: theme.spacing(18),
@@ -36,7 +35,7 @@ const AvatarSection = () => {
       container
       spacing={3}
       direction="column"
-      justify="space-evenly"
+      justify="flex-start"
       alignItems="center"
       className={classes.container}
     >
@@ -46,12 +45,11 @@ const AvatarSection = () => {
         </Typography>
       </Grid>
       <Grid item xs>
-        <Avatar alt="Cory Siebler" src={portrait} className={classes.avatar} />
+        <Avatar alt="Cory Siebler" src={avatar} className={classes.avatar} />
       </Grid>
       <Grid item>
         <Typography variant="body2" className={classes.caption}>
-          Hi! My name is Cory Siebler, a Senior Software Engineer. Welcome to my
-          personal website!
+          Hi! My name is Cory Siebler. Welcome to my personal website!
         </Typography>
       </Grid>
       <Grid
