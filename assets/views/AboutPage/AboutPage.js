@@ -6,7 +6,7 @@ import PageLayout from "components/PageLayout/PageLayout";
 const useStyles = makeStyles((theme) => ({
   content: {
     backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(8, 0, 6),
+    padding: theme.spacing(2, 0, 1),
   },
 }));
 
@@ -18,7 +18,6 @@ const AboutPage = () => {
       <div className={classes.content}>
         <Typography
           id="back-to-top-anchor"
-          component="h1"
           variant="h2"
           align="center"
           color="textPrimary"

@@ -1,74 +1,82 @@
 import React from "react";
-import PropTypes from "prop-types";
-import clsx from "clsx";
+import Image from "material-ui-image";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
+import Grid from "@material-ui/core/Grid";
+import Button from "@material-ui/core/Button";
+import Link from "@material-ui/core/Link";
+import Typography from "@material-ui/core/Typography";
+import Hidden from "@material-ui/core/Hidden";
+import PictureAsPdfIcon from "@material-ui/icons/PictureAsPdf";
+import pdf from "docs/Resume_CorySiebler.pdf";
+import portrait from "images/portrait.jpg";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    color: theme.palette.common.white,
-    position: "relative",
-    display: "flex",
-    alignItems: "center",
-    [theme.breakpoints.up("sm")]: {
-      height: "80vh",
-      minHeight: 500,
-      maxHeight: 1300,
-    },
+  content: {
+    paddingBottom: theme.spacing(2),
   },
-  container: {
-    marginTop: theme.spacing(3),
-    marginBottom: theme.spacing(14),
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-  },
-  backdrop: {
-    position: "absolute",
-    left: 0,
-    right: 0,
-    top: 0,
-    bottom: 0,
-    backgroundColor: theme.palette.common.black,
-    opacity: 0.5,
-    zIndex: -1,
-  },
-  background: {
-    position: "absolute",
-    left: 0,
-    right: 0,
-    top: 0,
-    bottom: 0,
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
-    zIndex: -2,
-  },
-  arrowDown: {
-    position: "absolute",
-    bottom: theme.spacing(4),
+  profileImage: {
+    borderRadius: "30px",
   },
 }));
 
-function LandingHeroSection(props) {
+const LandingHeroSection = () => {
   const classes = useStyles();
-  const { backgroundClassName, children } = props;
 
   return (
-    <section className={classes.root}>
-      <Container className={classes.container}>
-        {children}
-        <div className={classes.backdrop} />
-        <div className={clsx(classes.background, backgroundClassName)} />
-        <KeyboardArrowDownIcon className={classes.arrowDown} />
-      </Container>
-    </section>
+    <Container className={classes.content}>
+      <Grid container spacing={2} justify="space-around" alignItems="center">
+        <Grid item xs={12} sm={8}>
+          <Typography id="back-to-top-anchor" variant="h2" color="textPrimary">
+            Cory Siebler
+          </Typography>
+          <Typography variant="h5" color="textSecondary" gutterBottom>
+            Senior Software Engineer
+          </Typography>
+          <Typography
+            variant="body1"
+            color="textPrimary"
+            gutterBottom
+            paragraph
+          >
+            I am a full-stack developer specializing in web development with
+            PHP, React, and Python. Want to see more of my work? Check out my{" "}
+            <Link href="https://github.com/crsiebler" target="_blank">
+              GitHub
+            </Link>{" "}
+            account.
+          </Typography>
+          <Grid container spacing={1} justify="center">
+            <Grid item>
+              <Button
+                variant="contained"
+                color="primary"
+                component="a"
+                href={pdf}
+                target="_blank"
+                endIcon={<PictureAsPdfIcon />}
+              >
+                <Hidden xsDown>Download </Hidden>Resume
+              </Button>
+            </Grid>
+            <Grid item>
+              <Button
+                variant="outlined"
+                color="primary"
+                component="a"
+                href="/portfolio"
+              >
+                <Hidden xsDown>See </Hidden>Portfolio
+              </Button>
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid item xs={12} sm={4}>
+          <Image src={portrait} className={classes.profileImage} />
+        </Grid>
+      </Grid>
+    </Container>
   );
-}
-
-LandingHeroSection.propTypes = {
-  backgroundClassName: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
 };
 
 export default LandingHeroSection;

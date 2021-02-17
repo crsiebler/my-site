@@ -142,7 +142,7 @@ const FormSection = () => {
                 onChange={handleChange}
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <TextField
                 required
                 id="email"
@@ -163,7 +163,7 @@ const FormSection = () => {
                 onChange={handleChange}
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <TextField
                 id="phone"
                 label="Phone"
