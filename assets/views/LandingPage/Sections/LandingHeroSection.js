@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "material-ui-image";
 import { makeStyles } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
+import Container from "@material-ui/core/Container";
 import Button from "@material-ui/core/Button";
 import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
@@ -25,8 +25,21 @@ const LandingHeroSection = () => {
 
   return (
     <Container className={classes.content}>
-      <Grid container spacing={2} justify="space-around" alignItems="center">
-        <Grid item xs={12} sm={8}>
+      <Grid
+        container
+        spacing={2}
+        justify="space-around"
+        alignItems="flex-start"
+      >
+        <Grid
+          container
+          item
+          xs={12}
+          sm={8}
+          direction="column"
+          alignItems="flex-start"
+          justify="flex-start"
+        >
           <Typography id="back-to-top-anchor" variant="h2" color="textPrimary">
             Cory Siebler
           </Typography>
@@ -46,7 +59,7 @@ const LandingHeroSection = () => {
             </Link>{" "}
             account.
           </Typography>
-          <Grid container spacing={1} justify="center">
+          <Grid container spacing={1} justify="flex-start" alignItems="center">
             <Grid item>
               <Button
                 variant="contained"

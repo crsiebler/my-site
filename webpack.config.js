@@ -34,16 +34,6 @@ Encore.setOutputPath("public/build/")
     utils: path.resolve(__dirname, "./assets/utils/"),
     views: path.resolve(__dirname, "./assets/views"),
   })
-  .copyFiles({
-    from: "./assets/images",
-    to: "images/[path][name].[hash:8].[ext]",
-    pattern: /\.(png|jpg|jpeg|svg)$/,
-  })
-  .copyFiles({
-    from: "./assets/docs",
-    to: "docs/[path][name].[hash:8].[ext]",
-    pattern: /\.(pdf)$/,
-  })
   .addLoader({ test: /\.(pdf)$/, loader: "file-loader" })
   .enableSassLoader()
   .enableReactPreset();
