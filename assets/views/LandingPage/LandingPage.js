@@ -18,8 +18,8 @@ const LandingPage = () => {
 
   return (
     <PageLayout title="Home">
-      <Container maxWidth="lg" className={classes.content}>
-        <LandingHeroSection backgroundClassName={classes.background} />
+      <Container maxWidth={false} className={classes.content}>
+        <LandingHeroSection />
         <Divider />
         <LandingSkillsSection />
       </Container>

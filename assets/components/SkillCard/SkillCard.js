@@ -7,7 +7,7 @@ import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    minHeight: "280px",
+    height: "100%",
   },
   header: {
     display: "block",

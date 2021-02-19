@@ -1,12 +1,21 @@
 import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 
+const useStyles = makeStyles((theme) => ({
+  content: {
+    paddingBottom: theme.spacing(2),
+  },
+}));
+
 const AlbumHeroSection = () => {
+  const classes = useStyles();
+
   return (
-    <Container maxWidth="sm">
+    <Container maxWidth="md" className={classes.content}>
       <Typography
         id="back-to-top-anchor"
         variant="h2"
