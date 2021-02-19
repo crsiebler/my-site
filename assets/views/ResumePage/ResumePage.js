@@ -1,7 +1,9 @@
 import React from "react";
+import Helmet from "react-helmet";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
+import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import PictureAsPdf from "@material-ui/icons/PictureAsPdf";
 import PageLayout from "components/PageLayout/PageLayout";
@@ -19,7 +21,10 @@ const ResumePage = () => {
 
   return (
     <PageLayout title="Resume">
-      <div className={classes.content}>
+      <Helmet>
+        <title>Resume | Cory Siebler</title>
+      </Helmet>
+      <Container maxWidth={false} className={classes.content}>
         <Typography
           id="back-to-top-anchor"
           component="h1"
@@ -54,7 +59,7 @@ const ResumePage = () => {
             </Button>
           </Grid>
         </Grid>
-      </div>
+      </Container>
     </PageLayout>
   );
 };

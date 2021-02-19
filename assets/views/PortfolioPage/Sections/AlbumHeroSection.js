@@ -18,6 +18,7 @@ const AlbumHeroSection = () => {
     <Container maxWidth="md" className={classes.content}>
       <Typography
         id="back-to-top-anchor"
+        component="h1"
         variant="h2"
         align="center"
         color="textPrimary"

@@ -1,4 +1,5 @@
 import React from "react";
+import Helmet from "react-helmet";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
@@ -17,10 +18,14 @@ const ContactPage = () => {
 
   return (
     <PageLayout title="Contact">
-      <div className={classes.content}>
+      <Helmet>
+        <title>Contact | Cory Siebler</title>
+      </Helmet>
+      <Container maxWidth={false} className={classes.content}>
         <Container maxWidth="md">
           <Typography
             id="back-to-top-anchor"
+            component="h1"
             variant="h2"
             align="center"
             color="textPrimary"
@@ -30,7 +35,7 @@ const ContactPage = () => {
           </Typography>
           <FormSection />
         </Container>
-      </div>
+      </Container>
     </PageLayout>
   );
 };

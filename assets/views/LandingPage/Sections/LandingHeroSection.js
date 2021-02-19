@@ -27,7 +27,12 @@ const LandingHeroSection = () => {
     <Container className={classes.content}>
       <Grid container spacing={2} justify="space-around" alignItems="stretch">
         <Grid item xs={12} sm={8}>
-          <Typography id="back-to-top-anchor" variant="h2" color="textPrimary">
+          <Typography
+            id="back-to-top-anchor"
+            variant="h2"
+            component="h1"
+            color="textPrimary"
+          >
             Cory Siebler
           </Typography>
           <Typography variant="h5" color="textSecondary" gutterBottom>
