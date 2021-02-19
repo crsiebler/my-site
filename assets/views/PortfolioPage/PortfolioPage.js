@@ -1,5 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import Container from "@material-ui/core/Container";
+import Divider from "@material-ui/core/Divider";
 import PageLayout from "components/PageLayout/PageLayout";
 import AlbumHeroSection from "./Sections/AlbumHeroSection";
 import AlbumGridSection from "./Sections/AlbumGridSection";
@@ -16,10 +18,11 @@ const PorfolioPage = () => {
 
   return (
     <PageLayout title="Portfolio">
-      <div className={classes.content}>
+      <Container maxWidth={false} className={classes.content}>
         <AlbumHeroSection />
+        <Divider />
         <AlbumGridSection />
-      </div>
+      </Container>
     </PageLayout>
   );
 };

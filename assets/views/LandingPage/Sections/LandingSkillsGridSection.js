@@ -5,7 +5,7 @@ import { skills } from "constants/skillConstants";
 
 const LandingSkillsGridSection = () => {
   return (
-    <Grid container alignItems="center" justify="center" spacing={1}>
+    <Grid container alignItems="stretch" justify="center" spacing={1}>
       {skills.map((skill, index) => (
         <Grid key={index} item xs={6} sm={4} md={3}>
           <SkillCard

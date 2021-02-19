@@ -47,7 +47,7 @@ const AvatarSection = () => {
       <Grid item xs>
         <Avatar alt="Cory Siebler" src={avatar} className={classes.avatar} />
       </Grid>
-      <Grid item>
+      <Grid item xs>
         <Typography variant="body2" className={classes.caption}>
           Hi! My name is Cory Siebler. Welcome to my personal website!
         </Typography>

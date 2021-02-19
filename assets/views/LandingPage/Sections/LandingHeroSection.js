@@ -25,21 +25,8 @@ const LandingHeroSection = () => {
 
   return (
     <Container className={classes.content}>
-      <Grid
-        container
-        spacing={2}
-        justify="space-around"
-        alignItems="flex-start"
-      >
-        <Grid
-          container
-          item
-          xs={12}
-          sm={8}
-          direction="column"
-          alignItems="flex-start"
-          justify="flex-start"
-        >
+      <Grid container spacing={2} justify="space-around" alignItems="stretch">
+        <Grid item xs={12} sm={8}>
           <Typography id="back-to-top-anchor" variant="h2" color="textPrimary">
             Cory Siebler
           </Typography>
@@ -59,7 +46,7 @@ const LandingHeroSection = () => {
             </Link>{" "}
             account.
           </Typography>
-          <Grid container spacing={1} justify="flex-start" alignItems="center">
+          <Grid container spacing={1} justify="flex-start">
             <Grid item>
               <Button
                 variant="contained"

@@ -127,7 +127,7 @@ export const skills = [
     title: "IDEs",
     icons: [VisualStudioCodeIcon, JetBrainsIcon, EclipseIcon],
     body:
-      "A developer's best friend. Visual Studio Code 💯 because its free but JetBrains makes a great IDE as well.",
+      "A developer's best friend. Visual Studio Code 💯 because its free but JetBrains makes great products as well.",
   },
   {
     title: "Cloud Computing",
