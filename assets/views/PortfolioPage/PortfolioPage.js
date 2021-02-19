@@ -1,5 +1,4 @@
 import React from "react";
-import Helmet from "react-helmet";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Divider from "@material-ui/core/Divider";
@@ -19,9 +18,6 @@ const PorfolioPage = () => {
 
   return (
     <PageLayout title="Portfolio">
-      <Helmet>
-        <title>Portfolio | Cory Siebler</title>
-      </Helmet>
       <Container maxWidth={false} className={classes.content}>
         <AlbumHeroSection />
         <Divider />
