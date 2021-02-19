@@ -1,4 +1,5 @@
 import React from "react";
+import Helmet from "react-helmet";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import PageLayout from "components/PageLayout/PageLayout";
