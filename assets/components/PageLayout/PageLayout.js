@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Helmet from "react-helmet";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import ResponsiveAppBar from "components/ResponsiveAppBar/ResponsiveAppBar";
@@ -37,6 +38,9 @@ const PageLayout = (props) => {
 
   return (
     <div className={classes.root}>
+      <Helmet>
+        <title>{title} | Cory Siebler</title>
+      </Helmet>
       <ResponsiveAppBar
         menuItems={menuItems}
         title={title}

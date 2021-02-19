@@ -18,9 +18,6 @@ const ContactPage = () => {
 
   return (
     <PageLayout title="Contact">
-      <Helmet>
-        <title>Contact | Cory Siebler</title>
-      </Helmet>
       <Container maxWidth={false} className={classes.content}>
         <Container maxWidth="md">
           <Typography

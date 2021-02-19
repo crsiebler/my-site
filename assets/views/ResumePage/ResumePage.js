@@ -21,9 +21,6 @@ const ResumePage = () => {
 
   return (
     <PageLayout title="Resume">
-      <Helmet>
-        <title>Resume | Cory Siebler</title>
-      </Helmet>
       <Container maxWidth={false} className={classes.content}>
         <Typography
           id="back-to-top-anchor"

@@ -16,9 +16,6 @@ const AboutPage = () => {
 
   return (
     <PageLayout title="About">
-      <Helmet>
-        <title>About | Cory Siebler</title>
-      </Helmet>
       <Container className={classes.content}>
         <Typography
           id="back-to-top-anchor"
