@@ -1,4 +1,5 @@
 import React from "react";
+import Helmet from "react-helmet";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import PageLayout from "components/PageLayout/PageLayout";
@@ -15,9 +16,13 @@ const AboutPage = () => {
 
   return (
     <PageLayout title="About">
-      <div className={classes.content}>
+      <Helmet>
+        <title>About | Cory Siebler</title>
+      </Helmet>
+      <Container className={classes.content}>
         <Typography
           id="back-to-top-anchor"
+          component="h1"
           variant="h2"
           align="center"
           color="textPrimary"
@@ -26,7 +31,7 @@ const AboutPage = () => {
           Learn More
         </Typography>
         <Typography variant="body1">Under Construction</Typography>
-      </div>
+      </Container>
     </PageLayout>
   );
 };
