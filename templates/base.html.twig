@@ -16,11 +16,19 @@
 		<meta property="og:title" content="Cory Siebler"/>
 		<meta property="og:type" content="website"/>
 		<meta property="og:url" content="https://corysiebler.com"/>
-		<meta property="og:image" content="apple-touch.png"/>
+		<meta property="og:image" content="{{ asset('apple-touch.png') }}"/>
 		<meta property="og:description" content="A software engineer and web developer."/>
 		<link rel="manifest" href="{{ asset('build/manifest.json') }}"/>
-		<link rel="shortcut icon" href="favicon.svg" type="image/svg+xml"/>
-		<link rel="apple-touch-icon" sizes="152x152" href="apple-icon.png"/>
+		<link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon"/>
+		<link rel="apple-touch-icon" href="{{ asset('apple-touch.png') }}"/>
+		<link rel="apple-touch-icon" sizes="57x57" href="{{ asset('apple-touch.png') }}"/>
+		<link rel="apple-touch-icon" sizes="72x72" href="{{ asset('apple-touch.png') }}"/>
+		<link rel="apple-touch-icon" sizes="76x76" href="{{ asset('apple-touch.png') }}"/>
+		<link rel="apple-touch-icon" sizes="114x114" href="{{ asset('apple-touch.png') }}"/>
+		<link rel="apple-touch-icon" sizes="120x120" href="{{ asset('apple-touch.png') }}"/>
+		<link rel="apple-touch-icon" sizes="144x144" href="{{ asset('apple-touch.png') }}"/>
+		<link rel="apple-touch-icon" sizes="152x152" href="{{ asset('apple-touch.png') }}"/>
+		<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch.png') }}"/>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"/>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
 		<link rel="canonical" href="https://corysiebler.com/"/>
