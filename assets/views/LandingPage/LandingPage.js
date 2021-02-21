@@ -15,7 +15,6 @@ const useStyles = makeStyles((theme) => ({
 
 const LandingPage = () => {
   const classes = useStyles();
-
   return (
     <PageLayout title="Home">
       <Container maxWidth={false} className={classes.content}>

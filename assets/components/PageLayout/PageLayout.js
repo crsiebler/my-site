@@ -11,6 +11,7 @@ import { drawerWidth } from "constants/drawerConstants";
 import { menuItems } from "constants/navigationConstants";
 import AvatarSection from "./Sections/AvatarSection";
 import NavigationSection from "./Sections/NavigationSection";
+import AuthorizationSection from "./Sections/AuthorizationSection";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -49,10 +50,12 @@ const PageLayout = (props) => {
       >
         <AvatarSection />
         <NavigationSection />
+        <AuthorizationSection />
       </ResponsiveAppBar>
       <ResponsiveDrawer>
         <AvatarSection />
         <NavigationSection />
+        <AuthorizationSection />
       </ResponsiveDrawer>
       <Container
         component="main"
@@ -73,7 +76,7 @@ PageLayout.propTypes = {
 };
 
 PageLayout.defaultProps = {
-  title: "Cory Siebler",
+  title: "Home",
 };
 
 export default PageLayout;
