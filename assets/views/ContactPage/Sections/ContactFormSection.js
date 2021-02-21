@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const FormSection = () => {
+const ContactFormSection = () => {
   const classes = useStyles();
   const [payload, setPayload] = React.useState(formData);
   const [errors, setErrors] = React.useState(formErrors);
@@ -219,4 +219,4 @@ const FormSection = () => {
   );
 };
 
-export default FormSection;
+export default ContactFormSection;

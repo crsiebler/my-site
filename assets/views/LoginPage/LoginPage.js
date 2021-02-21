@@ -1,10 +1,10 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
+import { useOktaAuth } from "@okta/okta-react";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import Divider from "@material-ui/core/Divider";
 import PageLayout from "components/PageLayout/PageLayout";
-import AlbumHeroSection from "./Sections/AlbumHeroSection";
-import AlbumGridSection from "./Sections/AlbumGridSection";
+import LoginFormSection from "./Sections/LoginFormSection";
 
 const useStyles = makeStyles((theme) => ({
   content: {
@@ -13,18 +13,22 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const PorfolioPage = () => {
+const LoginPage = () => {
+  const { authState } = useOktaAuth();
   const classes = useStyles();
 
-  return (
-    <PageLayout title="Portfolio">
+  if (authState.isPending) {
+    return <div>Loading...</div>;
+  }
+  return authState.isAuthenticated ? (
+    <Redirect to={{ pathname: "/" }} />
+  ) : (
+    <PageLayout title="Login">
       <Container maxWidth={false} className={classes.content}>
-        <AlbumHeroSection />
-        <Divider />
-        <AlbumGridSection />
+        <LoginFormSection />
       </Container>
     </PageLayout>
   );
 };
 
-export default PorfolioPage;
+export default LoginPage;

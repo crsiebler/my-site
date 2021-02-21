@@ -1,5 +1,6 @@
 const Encore = require("@symfony/webpack-encore");
 const path = require("path");
+const Dotenv = require("dotenv-webpack");
 
 // Manually configure the runtime environment if not already configured yet by the "encore" command.
 // It's useful when you use tools that rely on webpack.config.js file.
@@ -19,6 +20,14 @@ Encore.setOutputPath("public/build/")
   .configureBabel((config) => {
     config.plugins.push("@babel/plugin-proposal-class-properties");
   })
+  .addPlugin(
+    new Dotenv({
+      path: "./.env.dev.local",
+      defaults: "./.env",
+      systemvars: true,
+      allowEmptyValues: true,
+    })
+  )
   .configureBabelPresetEnv((config) => {
     config.useBuiltIns = "usage";
     config.corejs = 3;
