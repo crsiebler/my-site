@@ -3,8 +3,8 @@
   "name": "Cory Siebler's Personal Website",
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff",
+  "theme_color": "#4051B5",
+  "background_color": "#4051B5",
   "icons": [
     {
       "src": "favicon.ico",
