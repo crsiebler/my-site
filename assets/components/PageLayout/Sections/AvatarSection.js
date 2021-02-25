@@ -4,7 +4,7 @@ import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import IconButton from "@material-ui/core/IconButton";
-import avatar from "images/avatar.jpg";
+import avatar from "images/avatar.png";
 import { menuItems } from "constants/navigationConstants";
 
 const useStyles = makeStyles((theme) => ({

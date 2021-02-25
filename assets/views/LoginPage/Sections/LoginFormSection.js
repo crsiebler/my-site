@@ -1,11 +1,18 @@
 import React from "react";
+import {
+  GoogleReCaptchaProvider,
+  GoogleReCaptcha,
+} from "react-google-recaptcha-v3";
 import { useOktaAuth } from "@okta/okta-react";
 import { makeStyles } from "@material-ui/core";
+import Snackbar from "@material-ui/core/Snackbar";
+import Alert from "@material-ui/lab/Alert";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import { formAlert } from "constants/contactConstants";
 
 const useStyles = makeStyles((theme) => ({
   textField: {
@@ -28,20 +35,35 @@ const LoginFormSection = () => {
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [error, setError] = React.useState(initError);
+  const [alert, setAlert] = React.useState(formAlert);
+  const [captcha, setCaptcha] = React.useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    oktaAuth
-      .signInWithCredentials({ username, password })
-      .then((res) => {
-        const sessionToken = res.sessionToken;
-        setSessionToken(sessionToken);
-        // sessionToken is a one-use token, so make sure this is only called once
-        oktaAuth.signInWithRedirect({ sessionToken });
-      })
-      .catch((err) => {
-        setError({ thrown: true, text: err.errorSummary });
+    if (!captcha) {
+      setAlert({
+        open: true,
+        severity: "warning",
+        message: "Must Complete Captcha",
       });
+    } else {
+      oktaAuth
+        .signInWithCredentials({ username, password })
+        .then((res) => {
+          const sessionToken = res.sessionToken;
+          setSessionToken(sessionToken);
+          // sessionToken is a one-use token, so make sure this is only called once
+          oktaAuth.signInWithRedirect({ sessionToken });
+        })
+        .catch((err) => {
+          setError({ thrown: true, text: err.errorSummary });
+          setAlert({
+            open: true,
+            severity: "error",
+            message: "Error Signing On",
+          });
+        });
+    }
   };
 
   const handleUsernameChange = (e) => {
@@ -59,58 +81,81 @@ const LoginFormSection = () => {
     return null;
   }
 
+  const handleVerify = () => {
+    setCaptcha(true);
+  };
+
+  const handleClose = () => {
+    setAlert({ ...alert, open: false });
+  };
+
   return (
-    <Container maxWidth="sm">
-      <Typography
-        id="back-to-top-anchor"
-        variant="h2"
-        component="h1"
-        color="textPrimary"
-        gutterBottom
+    <GoogleReCaptchaProvider reCaptchaKey="6LfKPUgaAAAAAGzSJmKt8PKVnpFi4Q0J06wtHUYB">
+      <Snackbar
+        anchorOrigin={{ vertical: "top", horizontal: "right" }}
+        open={alert.open}
+        onClose={handleClose}
+        autoHideDuration={5000}
       >
-        Login
-      </Typography>
-      <form onSubmit={handleSubmit}>
-        <Grid container spacing={2}>
-          <Grid item xs={12}>
-            <TextField
-              variant="outlined"
-              id="username"
-              type="text"
-              label="Username"
-              value={username}
-              error={error.thrown}
-              onChange={handleUsernameChange}
-              className={classes.textField}
-            />
+        <Alert onClose={handleClose} severity={alert.severity}>
+          {alert.message}
+        </Alert>
+      </Snackbar>
+      <Container maxWidth="sm">
+        <Typography
+          id="back-to-top-anchor"
+          variant="h2"
+          component="h1"
+          color="textPrimary"
+          gutterBottom
+        >
+          Login
+        </Typography>
+        <form onSubmit={handleSubmit}>
+          <Grid container spacing={2}>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                id="username"
+                type="text"
+                label="Username"
+                value={username}
+                error={error.thrown}
+                onChange={handleUsernameChange}
+                className={classes.textField}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                id="password"
+                type="password"
+                value={password}
+                label="Password"
+                variant="outlined"
+                error={error.thrown}
+                helperText={error.text}
+                onChange={handlePasswordChange}
+                className={classes.textField}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <GoogleReCaptcha onVerify={handleVerify} />
+            </Grid>
+            <Grid item xs={12}>
+              <Button
+                id="submit"
+                type="submit"
+                variant="contained"
+                color="primary"
+                className={classes.button}
+              >
+                Submit
+              </Button>
+            </Grid>
           </Grid>
-          <Grid item xs={12}>
-            <TextField
-              id="password"
-              type="password"
-              value={password}
-              label="Password"
-              variant="outlined"
-              error={error.thrown}
-              helperText={error.text}
-              onChange={handlePasswordChange}
-              className={classes.textField}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <Button
-              id="submit"
-              type="submit"
-              variant="contained"
-              color="primary"
-              className={classes.button}
-            >
-              Submit
-            </Button>
-          </Grid>
-        </Grid>
-      </form>
-    </Container>
+        </form>
+      </Container>
+    </GoogleReCaptchaProvider>
   );
 };
 

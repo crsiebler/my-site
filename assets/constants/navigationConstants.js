@@ -20,7 +20,7 @@ export const menuItems = [
   },
   {
     ariaLabel: "phone",
-    href: "tel:4803192922",
+    href: "tel:14803192922",
     icon: <PhoneIcon style={{ color: iconColorPrimary }} />,
   },
   {
