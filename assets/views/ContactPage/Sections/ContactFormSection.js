@@ -19,7 +19,7 @@ import { postContact } from "api/contactApi";
 import { formData, formErrors, formAlert } from "constants/contactConstants";
 import validateContactForm from "utils/validateContactForm";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     flexGrow: 1,
   },

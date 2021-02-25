@@ -1,12 +1,10 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
-import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
-import Typography from "@material-ui/core/Typography";
-import PictureAsPdf from "@material-ui/icons/PictureAsPdf";
+import Divider from "@material-ui/core/Divider";
 import PageLayout from "components/PageLayout/PageLayout";
-import pdf from "docs/Resume_CorySiebler.pdf";
+import ResumeSection from "./Sections/ResumeSection";
+import ResumeHeroSeciton from "./Sections/ResumeHeroSection";
 
 const useStyles = makeStyles((theme) => ({
   content: {
@@ -21,40 +19,9 @@ const ResumePage = () => {
   return (
     <PageLayout title="Resume">
       <Container maxWidth={false} className={classes.content}>
-        <Typography
-          id="back-to-top-anchor"
-          component="h1"
-          variant="h2"
-          align="center"
-          color="textPrimary"
-          gutterBottom
-        >
-          My Experience
-        </Typography>
-        <Grid container spacing={2} justify="center">
-          <Grid item>
-            <Button
-              variant="contained"
-              color="primary"
-              component="a"
-              href={pdf}
-              target="_blank"
-              endIcon={<PictureAsPdf />}
-            >
-              Download Resume
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button
-              variant="outlined"
-              color="primary"
-              component="a"
-              href="/portfolio"
-            >
-              See Portfolio
-            </Button>
-          </Grid>
-        </Grid>
+        <ResumeHeroSeciton />
+        <Divider />
+        <ResumeSection />
       </Container>
     </PageLayout>
   );

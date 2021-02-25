@@ -7,8 +7,7 @@ import Button from "@material-ui/core/Button";
 import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
 import Hidden from "@material-ui/core/Hidden";
-import PictureAsPdfIcon from "@material-ui/icons/PictureAsPdf";
-import pdf from "docs/Resume_CorySiebler.pdf";
+import InfoIcon from "@material-ui/icons/Info";
 import portrait from "images/portrait.jpg";
 
 const useStyles = makeStyles((theme) => ({
@@ -57,11 +56,10 @@ const LandingHeroSection = () => {
                 variant="contained"
                 color="primary"
                 component="a"
-                href={pdf}
-                target="_blank"
-                endIcon={<PictureAsPdfIcon />}
+                href="/resume"
+                endIcon={<InfoIcon />}
               >
-                <Hidden xsDown>Download </Hidden>Resume
+                <Hidden xsDown>View </Hidden>Resume
               </Button>
             </Grid>
             <Grid item>
