@@ -80,7 +80,8 @@ const ResumeExperienceSection = () => {
               <Typography variant="body1">
                 JavaScript, Python, React.js, Redux.js, Pyramid, Tornado, Java,
                 Spring, PostgreSQL, RabbitMQ, Nginx, Tyk, Docker, Kubernetes,
-                Jenkins, Jira, Bitbucket, Confluence
+                Jenkins, Jira, Bitbucket, Confluence, LocalStack, AWS S3, AWS
+                RDS, AWS ECS
               </Typography>
             </AccordionDetails>
           </Accordion>
