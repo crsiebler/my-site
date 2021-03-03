@@ -54,7 +54,7 @@ const ResumeExperienceSection = () => {
                 <li>
                   <Typography variant="body1">
                     Implement new features and redesign existing user interface
-                    using ReactJS with hooks.
+                    using React.js with hooks.
                   </Typography>
                 </li>
                 <li>
