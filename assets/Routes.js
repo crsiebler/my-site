@@ -28,7 +28,7 @@ const Routes = () => {
         <Route path="/portfolio" component={PortfolioPage} />
         <Route path="/resume" component={ResumePage} />
         <Route path="/contact" component={ContactPage} />
-        <SecureRoute path="/about" component={AboutPage} />
+        <Redirect path="/about" to="/" />
         <SecureRoute path="/admin" component={LandingPage} />
         <Redirect to="/" />
       </Switch>
