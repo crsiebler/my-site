@@ -63,6 +63,12 @@ const ResumeExperienceSection = () => {
                     automated pipelines in Jenkins to Kubernetes clusters.
                   </Typography>
                 </li>
+                <li>
+                  <Typography variant="body1">
+                    Create and maintain RESTful APIs with Java Spring for
+                    services such as Identity Access and Management (IAM).
+                  </Typography>
+                </li>
               </ul>
             </AccordionDetails>
           </Accordion>
@@ -79,9 +85,9 @@ const ResumeExperienceSection = () => {
             <AccordionDetails>
               <Typography variant="body1">
                 JavaScript, Python, React.js, Redux.js, Pyramid, Tornado, Java,
-                Spring, PostgreSQL, RabbitMQ, Nginx, Tyk, Docker, Kubernetes,
-                Jenkins, Jira, Bitbucket, Confluence, LocalStack, AWS S3, AWS
-                RDS, AWS ECS
+                Spring, Hibernate, PostgreSQL, RabbitMQ, Nginx, Tyk, Docker,
+                Kubernetes, Jenkins, Jira, Bitbucket, Confluence, LocalStack,
+                AWS S3, AWS RDS, AWS ECS
               </Typography>
             </AccordionDetails>
           </Accordion>
@@ -162,10 +168,10 @@ const ResumeExperienceSection = () => {
             </AccordionSummary>
             <AccordionDetails>
               <Typography variant="body1">
-                Java, J2EE, Jenkins, Python, NumPy, OpenPyxl, SQL, PL/SQL, Bash,
-                RedHat Linux, VMware vSphere, Oracle Database, Oracle WebLogic,
-                Oracle Exadata, Oracle Business Intelligence, Oracle Data
-                Integrator, Oracle GoldenGate, Eclipse, Star Schema, 3NF
+                Java, J2EE, JPA, Jenkins, Python, NumPy, OpenPyxl, SQL, PL/SQL,
+                Bash, RedHat Linux, VMware vSphere, Oracle Database, Oracle
+                WebLogic, Oracle Exadata, Oracle Business Intelligence, Oracle
+                Data Integrator, Oracle GoldenGate, Eclipse, Star Schema, 3NF
               </Typography>
             </AccordionDetails>
           </Accordion>
@@ -205,6 +211,25 @@ const ResumeExperienceSection = () => {
                   <Typography variant="body1">
                     Develop OSGi bundles utilizing Java, Apache Maven, and
                     Apache Karaf.
+                  </Typography>
+                </li>
+                <li>
+                  <Typography variant="body1">
+                    Incorporate third-party FOSS such as Xuggler, FFmpeg, and
+                    OpenCV for use in project.
+                  </Typography>
+                </li>
+                <li>
+                  <Typography variant="body1">
+                    Deploy distributed system add-ons within the DreamHammer
+                    Ballista application.
+                  </Typography>
+                </li>
+                <li>
+                  <Typography variant="body1">
+                    Defect analysis and resolution work, test, integration,
+                    regression testing, tool development, software design, and
+                    design documentation.
                   </Typography>
                 </li>
               </ul>
