@@ -67,7 +67,7 @@ export const skills = [
     title: "Java",
     icons: [JavaIcon, SpringIcon],
     body:
-      "J2EE Applications with Maven, modular design using OSGi, and microservies with Spring.",
+      "J2EE Applications with Maven, modular design using OSGi, microservies with Spring and Hibernate.",
   },
   {
     title: "Microcontrollers",
