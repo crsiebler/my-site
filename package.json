@@ -27,7 +27,7 @@
     "web-vitals": "^1.1.0",
     "webpack-notifier": "^1.6.0"
   },
-  "license": "UNLICENSED",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "dev-server": "encore dev-server",
