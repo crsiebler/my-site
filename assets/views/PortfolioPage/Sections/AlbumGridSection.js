@@ -8,6 +8,7 @@ import projectImg3 from "images/project-nextos.png";
 import projectImg4 from "images/project-walmart.png";
 import projectImg5 from "images/project-mim.jpg";
 import projectImg6 from "images/project-lone-butte-casino.jpg";
+import projectImg7 from "images/project-922-place.jpg";
 import AlbumCardSection from "./AlbumCardSection";
 
 const useStyles = makeStyles((theme) => ({
@@ -89,8 +90,10 @@ const AlbumGridSection = () => {
                 rich diversity and history of many world cultures. But music and
                 instruments also show us what we have in common—a thought
                 powerfully expressed in our motto, music is the language of the
-                soul. General contractor Ryan Companies, and landscape 
-                architect Ten Eyck Landscape Architects."
+                soul. Provided estimation and project management as the 
+                landscape subcontractor under general contractor Ryan 
+                Companies, and landscape architect Ten Eyck Landscape 
+                Architects."
             href="https://mim.org/"
           />
         </Grid>
@@ -105,8 +108,24 @@ const AlbumGridSection = () => {
                 one of three themed passages. One represents earth, one fire 
                 and the third represents water. The art work displayed 
                 throughout the casino is commissioned from local Native 
-                American artists. General contactor J.E. Dunn Construction."
+                American artists. Provided estimation and project management 
+                as the landscape subcontractor under general contactor J.E. 
+                Dunn Construction."
             href="https://playatgila.com/"
+          />
+        </Grid>
+        <Grid item xs={12} sm={6} md={4}>
+          <AlbumCardSection
+            imgSrc={projectImg7}
+            imgTitle="922 Place"
+            title="922 Place"
+            description="Provided estimation and project management on one of 
+              Tempe’s premier student housing communities. 922 Place offers 
+              fully-furnished apartments with private bedrooms, and amenities 
+              for health, fitness, and socialization. Main feature of project 
+              was a lounge area consisting of a green-roof terrace and pool 
+              located on the four floor."
+            href="https://www.instagram.com/922place/"
           />
         </Grid>
       </Grid>
