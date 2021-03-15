@@ -73,7 +73,7 @@ export const skills = [
     title: "Microcontrollers",
     icons: [ArduinoIcon, RaspberryPiIcon],
     body:
-      "Designing fun projects for around the house automation and other gadgets.",
+      "Designing fun projects for around the house automation and other gadgets using Arduinos and Raspberry Pis.",
   },
   {
     title: "Documentation",
