@@ -1,6 +1,6 @@
 # corysiebler.com
 
-[![Website corysiebler.com](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://shields.io/)
+[![Website corysiebler.com](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://corysiebler.com/)
 
 
 The personal website of Cory Siebler. Built using Symfony5 running PHP8. The front-end is React.js using hooks, Material-UI, and React Routing.
