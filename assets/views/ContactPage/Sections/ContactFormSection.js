@@ -17,6 +17,7 @@ import SubjectIcon from "@material-ui/icons/Subject";
 import { postContact } from "api/contactApi";
 import { formData, formErrors, formAlert } from "constants/contactConstants";
 import validateContactForm from "utils/validateContactForm";
+import "styles/modules/_m-contact.scss";
 
 const ContactFormSection = () => {
   const [payload, setPayload] = React.useState(formData);
