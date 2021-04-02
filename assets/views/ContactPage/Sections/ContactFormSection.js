@@ -3,7 +3,6 @@ import {
   GoogleReCaptchaProvider,
   GoogleReCaptcha,
 } from "react-google-recaptcha-v3";
-import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import InputAdornment from "@material-ui/core/InputAdornment";
@@ -19,20 +18,7 @@ import { postContact } from "api/contactApi";
 import { formData, formErrors, formAlert } from "constants/contactConstants";
 import validateContactForm from "utils/validateContactForm";
 
-const useStyles = makeStyles(() => ({
-  root: {
-    flexGrow: 1,
-  },
-  textField: {
-    width: "100%",
-  },
-  button: {
-    width: "100%",
-  },
-}));
-
 const ContactFormSection = () => {
-  const classes = useStyles();
   const [payload, setPayload] = React.useState(formData);
   const [errors, setErrors] = React.useState(formErrors);
   const [alert, setAlert] = React.useState(formAlert);
@@ -89,132 +75,136 @@ const ContactFormSection = () => {
 
   return (
     <GoogleReCaptchaProvider reCaptchaKey="6LfKPUgaAAAAAGzSJmKt8PKVnpFi4Q0J06wtHUYB">
-      <form autoComplete="on" method="post" onSubmit={handleSubmit}>
-        <div className={classes.root}>
-          <Snackbar
-            anchorOrigin={{ vertical: "top", horizontal: "right" }}
-            open={alert.open}
-            onClose={handleClose}
-            autoHideDuration={5000}
-          >
-            <Alert onClose={handleClose} severity={alert.severity}>
-              {alert.message}
-            </Alert>
-          </Snackbar>
-          <Grid container spacing={3}>
-            <Grid item xs={12}>
-              <TextField
-                required
-                id="name"
-                label="Name"
-                variant="outlined"
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <AccountCircle />
-                    </InputAdornment>
-                  ),
-                }}
-                className={classes.textField}
-                value={payload.name}
-                error={errors.name.error}
-                helperText={errors.name.text}
-                onChange={handleChange}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                required
-                id="subject"
-                label="Subject"
-                variant="outlined"
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <SubjectIcon />
-                    </InputAdornment>
-                  ),
-                }}
-                className={classes.textField}
-                value={payload.subject}
-                error={errors.subject.error}
-                helperText={errors.subject.text}
-                onChange={handleChange}
-              />
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <TextField
-                required
-                id="email"
-                label="Email"
-                variant="outlined"
-                type="email"
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <EmailIcon />
-                    </InputAdornment>
-                  ),
-                }}
-                className={classes.textField}
-                value={payload.email}
-                error={errors.email.error}
-                helperText={errors.email.text}
-                onChange={handleChange}
-              />
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <TextField
-                id="phone"
-                label="Phone"
-                variant="outlined"
-                type="tel"
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <PhoneIcon />
-                    </InputAdornment>
-                  ),
-                }}
-                className={classes.textField}
-                value={payload.phone}
-                error={errors.phone.error}
-                helperText={errors.phone.text}
-                onChange={handleChange}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                required
-                id="message"
-                label="Message"
-                variant="outlined"
-                className={classes.textField}
-                multiline
-                rows={10}
-                value={payload.message}
-                error={errors.message.error}
-                helperText={errors.message.text}
-                onChange={handleChange}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <GoogleReCaptcha onVerify={handleVerify} />
-            </Grid>
-            <Grid item xs={12}>
-              <Button
-                variant="contained"
-                color="primary"
-                type="submit"
-                className={classes.button}
-                endIcon={<SendIcon />}
-              >
-                Send your message
-              </Button>
-            </Grid>
+      <Container
+        component="form"
+        className="m-contact__form"
+        autoComplete="on"
+        method="post"
+        onSubmit={handleSubmit}
+      >
+        <Snackbar
+          anchorOrigin={{ vertical: "top", horizontal: "right" }}
+          open={alert.open}
+          onClose={handleClose}
+          autoHideDuration={5000}
+        >
+          <Alert onClose={handleClose} severity={alert.severity}>
+            {alert.message}
+          </Alert>
+        </Snackbar>
+        <Grid container spacing={3}>
+          <Grid item xs={12}>
+            <TextField
+              required
+              id="name"
+              label="Name"
+              variant="outlined"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <AccountCircle />
+                  </InputAdornment>
+                ),
+              }}
+              className="m-contact__input"
+              value={payload.name}
+              error={errors.name.error}
+              helperText={errors.name.text}
+              onChange={handleChange}
+            />
           </Grid>
-        </div>
-      </form>
+          <Grid item xs={12}>
+            <TextField
+              required
+              id="subject"
+              label="Subject"
+              variant="outlined"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <SubjectIcon />
+                  </InputAdornment>
+                ),
+              }}
+              className="m-contact__input"
+              value={payload.subject}
+              error={errors.subject.error}
+              helperText={errors.subject.text}
+              onChange={handleChange}
+            />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <TextField
+              required
+              id="email"
+              label="Email"
+              variant="outlined"
+              type="email"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <EmailIcon />
+                  </InputAdornment>
+                ),
+              }}
+              className="m-contact__input"
+              value={payload.email}
+              error={errors.email.error}
+              helperText={errors.email.text}
+              onChange={handleChange}
+            />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <TextField
+              id="phone"
+              label="Phone"
+              variant="outlined"
+              type="tel"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <PhoneIcon />
+                  </InputAdornment>
+                ),
+              }}
+              className="m-contact__input"
+              value={payload.phone}
+              error={errors.phone.error}
+              helperText={errors.phone.text}
+              onChange={handleChange}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              required
+              id="message"
+              label="Message"
+              variant="outlined"
+              className="m-contact__input"
+              multiline
+              rows={10}
+              value={payload.message}
+              error={errors.message.error}
+              helperText={errors.message.text}
+              onChange={handleChange}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <GoogleReCaptcha onVerify={handleVerify} />
+          </Grid>
+          <Grid item xs={12}>
+            <Button
+              variant="contained"
+              color="primary"
+              type="submit"
+              className="m-contact__button"
+              endIcon={<SendIcon />}
+            >
+              Send your message
+            </Button>
+          </Grid>
+        </Grid>
+      </Container>
     </GoogleReCaptchaProvider>
   );
 };
