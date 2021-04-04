@@ -1,0 +1,17 @@
+.m-landing {
+  background-color: white;
+  padding: 16px 0 8px;
+
+  &__hero {
+    padding-bottom: 16px;
+  }
+
+  &__img {
+    border-radius: 30px;
+  }
+
+  &__skills {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+}

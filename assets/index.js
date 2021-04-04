@@ -1,16 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
+import { StylesProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Routes from "./Routes";
 import reportWebVitals from "./reportWebVitals";
 import "styles/main.scss";
 
 ReactDOM.render(
-  <Router>
-    <CssBaseline />
-    <Routes />
-  </Router>,
+  <StylesProvider injectFirst>
+    <Router>
+      <CssBaseline />
+      <Routes />
+    </Router>
+  </StylesProvider>,
   document.getElementById("root")
 );
 
