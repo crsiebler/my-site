@@ -1,9 +1,9 @@
 .m-landing {
   background-color: white;
-  padding: 2 0 1;
+  padding: 16px 0 8px;
 
   &__hero {
-    padding-bottom: 2;
+    padding-bottom: 16px;
   }
 
   &__img {
@@ -11,7 +11,7 @@
   }
 
   &__skills {
-    padding-top: 2;
-    padding-bottom: 2;
+    padding-top: 16px;
+    padding-bottom: 16px;
   }
 }
