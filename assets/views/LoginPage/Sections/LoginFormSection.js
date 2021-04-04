@@ -4,7 +4,6 @@ import {
   GoogleReCaptcha,
 } from "react-google-recaptcha-v3";
 import { useOktaAuth } from "@okta/okta-react";
-import { makeStyles } from "@material-ui/core";
 import Snackbar from "@material-ui/core/Snackbar";
 import Alert from "@material-ui/lab/Alert";
 import Container from "@material-ui/core/Container";
@@ -14,22 +13,12 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { formAlert } from "constants/contactConstants";
 
-const useStyles = makeStyles((theme) => ({
-  textField: {
-    width: "100%",
-  },
-  button: {
-    width: "100%",
-  },
-}));
-
 const initError = {
   thrown: false,
   text: "",
 };
 
 const LoginFormSection = () => {
-  const classes = useStyles();
   const { oktaAuth } = useOktaAuth();
   const [sessionToken, setSessionToken] = React.useState();
   const [username, setUsername] = React.useState("");
@@ -101,7 +90,7 @@ const LoginFormSection = () => {
           {alert.message}
         </Alert>
       </Snackbar>
-      <Container maxWidth="sm">
+      <Container component="form" onSubmit={handleSubmit} maxWidth="sm">
         <Typography
           id="back-to-top-anchor"
           variant="h2"
@@ -111,49 +100,47 @@ const LoginFormSection = () => {
         >
           Login
         </Typography>
-        <form onSubmit={handleSubmit}>
-          <Grid container spacing={2}>
-            <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                id="username"
-                type="text"
-                label="Username"
-                value={username}
-                error={error.thrown}
-                onChange={handleUsernameChange}
-                className={classes.textField}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                id="password"
-                type="password"
-                value={password}
-                label="Password"
-                variant="outlined"
-                error={error.thrown}
-                helperText={error.text}
-                onChange={handlePasswordChange}
-                className={classes.textField}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <GoogleReCaptcha onVerify={handleVerify} />
-            </Grid>
-            <Grid item xs={12}>
-              <Button
-                id="submit"
-                type="submit"
-                variant="contained"
-                color="primary"
-                className={classes.button}
-              >
-                Submit
-              </Button>
-            </Grid>
+        <Grid container spacing={2}>
+          <Grid item xs={12}>
+            <TextField
+              variant="outlined"
+              id="username"
+              type="text"
+              label="Username"
+              value={username}
+              error={error.thrown}
+              onChange={handleUsernameChange}
+              className="m-login__input"
+            />
           </Grid>
-        </form>
+          <Grid item xs={12}>
+            <TextField
+              id="password"
+              type="password"
+              value={password}
+              label="Password"
+              variant="outlined"
+              error={error.thrown}
+              helperText={error.text}
+              onChange={handlePasswordChange}
+              className="m-login__input"
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <GoogleReCaptcha onVerify={handleVerify} />
+          </Grid>
+          <Grid item xs={12}>
+            <Button
+              id="submit"
+              type="submit"
+              variant="contained"
+              color="primary"
+              className="m-login__button"
+            >
+              Submit
+            </Button>
+          </Grid>
+        </Grid>
       </Container>
     </GoogleReCaptchaProvider>
   );
