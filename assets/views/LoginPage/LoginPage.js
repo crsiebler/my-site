@@ -4,6 +4,7 @@ import { useOktaAuth } from "@okta/okta-react";
 import Container from "@material-ui/core/Container";
 import PageLayout from "components/PageLayout/PageLayout";
 import LoginFormSection from "./Sections/LoginFormSection";
+import "styles/modules/_m-login.scss";
 
 const LoginPage = () => {
   const { authState } = useOktaAuth();
@@ -15,7 +16,7 @@ const LoginPage = () => {
     <Redirect to={{ pathname: "/" }} />
   ) : (
     <PageLayout title="Login">
-      <Container maxWidth={false} className={classes.content}>
+      <Container maxWidth={false} className="m-login">
         <LoginFormSection />
       </Container>
     </PageLayout>
