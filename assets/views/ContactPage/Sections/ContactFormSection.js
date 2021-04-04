@@ -3,6 +3,7 @@ import {
   GoogleReCaptchaProvider,
   GoogleReCaptcha,
 } from "react-google-recaptcha-v3";
+import Container from "@material-ui/core/Container";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import InputAdornment from "@material-ui/core/InputAdornment";
@@ -17,7 +18,6 @@ import SubjectIcon from "@material-ui/icons/Subject";
 import { postContact } from "api/contactApi";
 import { formData, formErrors, formAlert } from "constants/contactConstants";
 import validateContactForm from "utils/validateContactForm";
-import "styles/modules/_m-contact.scss";
 
 const ContactFormSection = () => {
   const [payload, setPayload] = React.useState(formData);
@@ -81,6 +81,7 @@ const ContactFormSection = () => {
         className="m-contact__form"
         autoComplete="on"
         method="post"
+        maxWidth="md"
         onSubmit={handleSubmit}
       >
         <Snackbar
