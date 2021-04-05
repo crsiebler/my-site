@@ -1,0 +1,16 @@
+.m-skillcard {
+  height: 100%;
+
+  &__header {
+    display: block;
+  }
+
+  &__avatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  &__content {
+    padding-top: 0;
+  }
+}

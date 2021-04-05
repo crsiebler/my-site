@@ -6,7 +6,7 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import Typography from "@material-ui/core/Typography";
-import SectionHeader from "components/SectionHeader/SectionHeader";
+import SectionHeader from "components/SectionHeader";
 import SportsEsportsIcon from "@material-ui/icons/SportsEsports";
 import SportsBaseballIcon from "@material-ui/icons/SportsBaseball";
 import SportsFootballIcon from "@material-ui/icons/SportsFootball";

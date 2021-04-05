@@ -1,6 +1,6 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-import SkillCard from "components/SkillCard/SkillCard";
+import SkillCard from "components/SkillCard";
 import { skills } from "constants/skillConstants";
 
 const LandingSkillsGridSection = () => (

@@ -1,36 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
-import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import ResponsiveAppBar from "components/ResponsiveAppBar/ResponsiveAppBar";
-import ResponsiveDrawer from "components/ResponsiveDrawer/ResponsiveDrawer";
-import ScrollTop from "components/ScrollTop/ScrollTop";
-import StickyFooter from "components/StickyFooter/StickyFooter";
-import { drawerWidth } from "constants/drawerConstants";
+import ResponsiveAppBar from "components/ResponsiveAppBar";
+import ResponsiveDrawer from "components/ResponsiveDrawer";
+import ScrollTop from "components/ScrollTop";
+import StickyFooter from "components/StickyFooter";
 import { menuItems } from "constants/navigationConstants";
 import AvatarSection from "./Sections/AvatarSection";
 import NavigationSection from "./Sections/NavigationSection";
 import AuthorizationSection from "./Sections/AuthorizationSection";
+import "styles/modules/_m-page.scss";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-    flexDirection: "column",
-    minHeight: "100vh",
-    [theme.breakpoints.up("md")]: {
-      width: `calc(100% - ${drawerWidth}px)`,
-      marginLeft: drawerWidth,
-    },
-  },
-  container: {
-    padding: "0px",
-  },
-}));
-
-const PageLayout = (props) => {
-  const { children, title } = props;
-  const classes = useStyles();
+const PageLayout = ({ children, title }) => {
   const [menuOpen, setMenuOpen] = React.useState(false);
 
   const toggleMenu = () => {
@@ -38,7 +20,7 @@ const PageLayout = (props) => {
   };
 
   return (
-    <div className={classes.root}>
+    <div className="m-page">
       <Helmet>
         <title>{title} | Cory Siebler</title>
       </Helmet>
@@ -60,7 +42,7 @@ const PageLayout = (props) => {
       <Container
         component="main"
         maxWidth={false}
-        classes={{ root: classes.container }}
+        className="m-page__container"
       >
         {children}
       </Container>

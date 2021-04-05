@@ -1,7 +1,7 @@
 import React from "react";
 import Container from "@material-ui/core/Container";
 import Divider from "@material-ui/core/Divider";
-import PageLayout from "components/PageLayout/PageLayout";
+import PageLayout from "components/PageLayout";
 import LandingHeroSection from "./Sections/LandingHeroSection";
 import LandingSkillsSection from "./Sections/LandingSkillsSection";
 import "styles/modules/_m-landing.scss";
