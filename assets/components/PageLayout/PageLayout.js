@@ -10,7 +10,6 @@ import { menuItems } from "constants/navigationConstants";
 import AvatarSection from "./Sections/AvatarSection";
 import NavigationSection from "./Sections/NavigationSection";
 import AuthorizationSection from "./Sections/AuthorizationSection";
-import "styles/modules/_m-page.scss";
 
 const PageLayout = ({ children, title }) => {
   const [menuOpen, setMenuOpen] = React.useState(false);

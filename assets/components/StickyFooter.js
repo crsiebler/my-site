@@ -3,7 +3,6 @@ import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
 import Hidden from "@material-ui/core/Hidden";
-import "styles/modules/_m-footer.scss";
 
 const Copyright = () => {
   return (

@@ -4,7 +4,6 @@ import Divider from "@material-ui/core/Divider";
 import PageLayout from "components/PageLayout";
 import LandingHeroSection from "./Sections/LandingHeroSection";
 import LandingSkillsSection from "./Sections/LandingSkillsSection";
-import "styles/modules/_m-landing.scss";
 
 const LandingPage = () => (
   <PageLayout title="Home">
