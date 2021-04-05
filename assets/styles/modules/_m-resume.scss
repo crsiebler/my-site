@@ -1,0 +1,70 @@
+.m-resume {
+  background-color: white;
+  padding: 16px 0 8px;
+
+  &__hero {
+    padding-bottom: 16px;
+  }
+
+  &__container {
+    padding-top: 16px;
+    padding-bottom: 8px;
+  }
+
+  &__paper {
+    @media screen and (min-width: 960px) {
+      max-width: 80%;
+    }
+  }
+
+  &__content {
+    margin: 0.5rem 1.5rem;
+    height: calc(100% - 1rem);
+  }
+
+  &__header {
+    padding: 8px;
+
+    &__caption {
+      padding-left: 8px;
+    }
+  }
+
+  &__main {
+    padding: 8px 0;
+
+    &__skills {
+      @media screen and (min-width: 960px) {
+        border-left: 1px solid rgba(0, 0, 0, 0.12);
+      }
+    }
+  }
+
+  &__bio {
+    padding: 8px 0;
+  }
+
+  &__avatar {
+    width: 160px;
+    height: 160px;
+    margin: auto;
+  }
+
+  &__footer {
+    padding: 8px;
+
+    &__grid {
+      text-align: center;
+    }
+
+    &__link {
+      display: inline-flex;
+      vertical-align: middle;
+
+      &__text {
+        padding-left: 8px;
+        margin: auto;
+      }
+    }
+  }
+}
