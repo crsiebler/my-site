@@ -6,7 +6,7 @@
   min-height: 100vh;
 
   @media screen and (min-width: 960px) {
-    width: calc(100% - $drawer-width);
+    width: calc(100% - #{$drawer-width});
     margin-left: $drawer-width;
   }
 
