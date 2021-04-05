@@ -2,7 +2,7 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 import { useOktaAuth } from "@okta/okta-react";
 import Container from "@material-ui/core/Container";
-import PageLayout from "components/PageLayout/PageLayout";
+import PageLayout from "components/PageLayout";
 import LoginFormSection from "./Sections/LoginFormSection";
 import "styles/modules/_m-login.scss";
 

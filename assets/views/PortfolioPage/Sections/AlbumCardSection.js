@@ -6,35 +6,31 @@ import CardActions from "@material-ui/core/CardActions";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 
-const AlbumCardSection = (props) => {
-  const { title, description, href, imgSrc, imgTitle } = props;
-
-  return (
-    <Card className="m-portfolio__card">
-      <CardMedia
-        className="m-portfolio__card__media"
-        image={imgSrc}
-        title={imgTitle}
-      />
-      <CardContent className="m-portfolio__card__content">
-        <Typography gutterBottom variant="h5" component="h2">
-          {title}
-        </Typography>
-        <Typography>{description}</Typography>
-      </CardContent>
-      <CardActions>
-        <Button
-          size="small"
-          color="primary"
-          component="a"
-          href={href}
-          target="_blank"
-        >
-          More Information
-        </Button>
-      </CardActions>
-    </Card>
-  );
-};
+const AlbumCardSection = ({ title, description, href, imgSrc, imgTitle }) => (
+  <Card className="m-portfolio__card">
+    <CardMedia
+      className="m-portfolio__card__media"
+      image={imgSrc}
+      title={imgTitle}
+    />
+    <CardContent className="m-portfolio__card__content">
+      <Typography gutterBottom variant="h5" component="h2">
+        {title}
+      </Typography>
+      <Typography>{description}</Typography>
+    </CardContent>
+    <CardActions>
+      <Button
+        size="small"
+        color="primary"
+        component="a"
+        href={href}
+        target="_blank"
+      >
+        More Information
+      </Button>
+    </CardActions>
+  </Card>
+);
 
 export default AlbumCardSection;

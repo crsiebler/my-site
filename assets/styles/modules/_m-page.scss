@@ -1,0 +1,38 @@
+@import "../variables";
+
+.m-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  @media screen and (min-width: 960px) {
+    width: calc(100% - $drawer-width);
+    margin-left: $drawer-width;
+  }
+
+  &__container {
+    padding: 0px;
+  }
+
+  &__avatar {
+    padding: 8px 8px 8px;
+
+    &__img {
+      width: 144px;
+      height: 144px;
+    }
+
+    &__caption {
+      text-align: center;
+      color: white;
+    }
+
+    &__title {
+      color: white;
+    }
+
+    &__socials {
+      text-align: center;
+    }
+  }
+}
