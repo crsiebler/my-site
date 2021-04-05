@@ -3,12 +3,12 @@ import { Switch, Route, Redirect, useHistory } from "react-router-dom";
 import { OktaAuth } from "@okta/okta-auth-js";
 import { LoginCallback, SecureRoute, Security } from "@okta/okta-react";
 import { oktaAuthConfig } from "constants/oktaConstants";
-import AboutPage from "views/AboutPage/AboutPage";
-import ContactPage from "views/ContactPage/ContactPage";
-import LandingPage from "views/LandingPage/LandingPage";
-import PortfolioPage from "views/PortfolioPage/PortfolioPage";
-import ResumePage from "views/ResumePage/ResumePage";
-import LoginPage from "views/LoginPage/LoginPage";
+import AboutPage from "views/AboutPage";
+import ContactPage from "views/ContactPage";
+import LandingPage from "views/LandingPage";
+import PortfolioPage from "views/PortfolioPage";
+import ResumePage from "views/ResumePage";
+import LoginPage from "views/LoginPage";
 
 const oktaAuth = new OktaAuth(oktaAuthConfig);
 
