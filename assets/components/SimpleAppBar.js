@@ -6,28 +6,24 @@ import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 
-const SimpleAppBar = (props) => {
-  const { title, onMenuClick, menuOpen, children } = props;
-
-  return (
-    <div>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            onClick={onMenuClick}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6">{title}</Typography>
-        </Toolbar>
-        {menuOpen && children}
-      </AppBar>
-    </div>
-  );
-};
+const SimpleAppBar = ({ title, onMenuClick, menuOpen, children }) => (
+  <div>
+    <AppBar position="static">
+      <Toolbar>
+        <IconButton
+          edge="start"
+          color="inherit"
+          aria-label="open drawer"
+          onClick={onMenuClick}
+        >
+          <MenuIcon />
+        </IconButton>
+        <Typography variant="h6">{title}</Typography>
+      </Toolbar>
+      {menuOpen && children}
+    </AppBar>
+  </div>
+);
 
 SimpleAppBar.propTypes = {
   title: PropTypes.string.isRequired,

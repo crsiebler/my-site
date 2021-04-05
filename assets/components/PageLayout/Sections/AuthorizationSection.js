@@ -4,7 +4,7 @@ import List from "@material-ui/core/List";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import SupervisorAccountIcon from "@material-ui/icons/SupervisorAccount";
-import ListItemGroup from "components/ListItemGroup/ListItemGroup";
+import ListItemGroup from "components/ListItemGroup";
 import { iconColorPrimary } from "constants/navigationConstants";
 
 const AuthorizationSection = () => {
