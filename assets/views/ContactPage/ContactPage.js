@@ -3,7 +3,6 @@ import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import PageLayout from "components/PageLayout";
 import ContactFormSection from "./Sections/ContactFormSection";
-import "styles/modules/_m-contact.scss";
 
 const ContactPage = () => (
   <PageLayout title="Contact">

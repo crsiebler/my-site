@@ -3,7 +3,6 @@ import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardContent from "@material-ui/core/CardContent";
 import Grid from "@material-ui/core/Grid";
-import "styles/modules/_m-skillcard.scss";
 
 const SkillCard = ({ title, body, icons }) => (
   <Card className="m-skillcard">
