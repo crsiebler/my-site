@@ -17,5 +17,5 @@ export const formErrors = {
 export const formAlert = {
   open: false,
   severity: "info",
-  message: "This is an infomation message!",
+  message: "This is an information message!",
 };
