@@ -1,6 +1,15 @@
-$base-font-family: "Roboto";
+$base-font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 $font-weight-heavy: 900;
 $font-weight-bold: 700;
 $font-weight-medium: 500;
 $font-weight-normal: 400;
+
 $drawer-width: 280px;
+
+$mobile-stepper-index: 1000;
+$speed-dial-index: 1050;
+$app-bar-index: 1100;
+$drawer-index: 1200;
+$modal-index: 1300;
+$snackbar-index: 1400;
+$tooltip-index: 1500;
