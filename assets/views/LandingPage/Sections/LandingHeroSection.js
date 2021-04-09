@@ -57,7 +57,12 @@ const LandingHeroSection = () => (
         </Grid>
       </Grid>
       <Grid item xs={12} sm={4}>
-        <Image src={portrait} className="m-landing__img" />
+        <Image
+          src={portrait}
+          alt="inviting portrait"
+          className="m-landing__img"
+          disableSpinner
+        />
       </Grid>
     </Grid>
   </Container>

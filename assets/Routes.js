@@ -4,6 +4,7 @@ import { OktaAuth } from "@okta/okta-auth-js";
 import { LoginCallback, SecureRoute, Security } from "@okta/okta-react";
 import { oktaAuthConfig } from "constants/oktaConstants";
 import PageLayout from "components/PageLayout";
+
 const LandingPage = React.lazy(() => import("views/LandingPage"));
 const ContactPage = React.lazy(() => import("views/ContactPage"));
 const PortfolioPage = React.lazy(() => import("views/PortfolioPage"));
