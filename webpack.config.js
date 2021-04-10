@@ -32,6 +32,11 @@ Encore.setOutputPath("public/build/")
     config.useBuiltIns = "usage";
     config.corejs = 3;
   })
+  .configureDevServerOptions((options) => {
+    options.https = {
+      pfx: path.join(process.env.HOME, ".symfony/certs/default.p12"),
+    };
+  })
   .addAliases({
     api: path.resolve(__dirname, "./assets/api"),
     components: path.resolve(__dirname, "./assets/components"),
